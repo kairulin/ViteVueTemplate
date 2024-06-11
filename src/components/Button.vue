@@ -1,5 +1,5 @@
 <template>
-    <component :is="as" :disabled="disabled" :class="buttonClass" data-testid="cvaButton">
+    <component :is="as" :disabled="disabled" :class="buttonClass" data-testid="cvaButton" @click="handleClick">
         <svg v-if="loading" class="animate-spin h-5 w-5 absolute" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -17,9 +17,13 @@
 <script setup lang="ts">
 import { cva } from 'class-variance-authority';
 import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
 const props = defineProps({
-    leftIcon: Object,
-    rightIcon: Object,
+    leftIcon: [Object, Function],
+    rightIcon: [Object, Function],
     loading: Boolean,
     disabled: Boolean,
     as: {
@@ -28,9 +32,8 @@ const props = defineProps({
     },
     intent: {
         type: String,
-        validator: (val: string) => ['primary', 'secondary', 'danger'].includes(val),
         default: 'secondary'
-    }
+    },
 });
 
 const buttonClass = computed(() => {
@@ -55,4 +58,22 @@ const buttonClass = computed(() => {
             disabled: props.disabled,
         });
 })
+const routerBack =() => {
+    // 如果不是a標籤，然後函式回傳成功，回到上一頁
+    const replaceRoute = route.fullPath.replace(route.path.slice(1), '');
+    if (props.as !== 'a') {
+        if (router.options.history.state.back === null) {
+            router.push(replaceRoute)
+        } else {
+            router.back()
+        }
+    }
+}
+const handleClick = () => {
+    if (props.disabled) {
+        event?.preventDefault();
+        return;
+    }
+    routerBack()
+}
 </script>

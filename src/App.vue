@@ -17,9 +17,10 @@ import ButtonPage from './views/ButtonPage.vue'
       </nav>
     </div>
   </header>
-
-  <RouterView /> -->
-  <ButtonPage />
+ -->
+  <router-link to="/button-page">Button Page</router-link>
+  <RouterView />
+  
 </template>
 
 <style scoped></style>
