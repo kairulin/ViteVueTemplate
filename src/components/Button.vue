@@ -1,5 +1,5 @@
 <template>
-    <component :is="as" :disalbed="disabled" :class="buttonClass">
+    <component :is="as" :disabled="disabled" :class="buttonClass" data-testid="cvaButton">
         <svg v-if="loading" class="animate-spin h-5 w-5 absolute" xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
