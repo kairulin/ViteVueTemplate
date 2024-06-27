@@ -1,7 +1,10 @@
 <script setup lang="ts">
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import ButtonPage from './views/ButtonPage.vue'
+// import ButtonPage from './views/ButtonPage.vue'
+// import Test from './components/Test.vue'
+import GridLayout from './components/GridLayout.vue';
+// import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
@@ -18,9 +21,23 @@ import ButtonPage from './views/ButtonPage.vue'
     </div>
   </header>
  -->
-  <router-link to="/button-page">Button Page</router-link>
-  <RouterView />
-  
+  <!-- <router-link to="/button-page">Button Page</router-link> -->
+  <!-- <RouterView /> -->
+  <!-- <Test /> -->
+   <GridLayout />
+    <!-- <Navigation /> -->
 </template>
 
-<style scoped></style>
+<style>
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+body {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+  /* background-image: radial-gradient(#320644, #140534); */
+}
+</style>
+

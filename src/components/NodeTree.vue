@@ -45,7 +45,6 @@ const checkSomeKey = (nodes, key) => {
 }
 // 清除節點
 const clearNodes = (nodes) => {
-    console.log('來這?', nodes)
     nodes.forEach(node => {
         treeRef.value.setChecked(node.code, false)
     })
