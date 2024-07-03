@@ -8,13 +8,16 @@
             aside
             <CustomNavigation />
         </aside>
-        <main>main</main>
+        <main>main
+            <CustomVirtualScroll/>
+        </main>
         <footer>footer</footer>
     </div>
 </template>
 <script setup lang="ts">
 // import Navigation from './Navigation.vue';
 import CustomNavigation from './CustomNavigation.vue';
+import CustomVirtualScroll from './CustomVirtualScroll.vue';
 </script>
 <style scoped>
 .container {
