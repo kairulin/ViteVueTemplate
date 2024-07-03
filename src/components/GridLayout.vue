@@ -1,22 +1,27 @@
 <template>
-    <container>
+    <div class="container">
         <nav>
-            <Navigation />
+            header
+            <!-- <Navigation /> -->
         </nav>
-        <aside>aside</aside>
+        <aside>
+            aside
+            <CustomNavigation />
+        </aside>
         <main>main</main>
         <footer>footer</footer>
-    </container>
+    </div>
 </template>
 <script setup lang="ts">
-import Navigation from './Navigation.vue';
+// import Navigation from './Navigation.vue';
+import CustomNavigation from './CustomNavigation.vue';
 </script>
 <style scoped>
-container {
+.container {
     display: grid;
     grid-template-rows: 70px 1fr 70px;
     /* grid-template-columns: 1fr 4fr 1fr; */
-    grid-template-columns: 200px 1fr 1fr;
+    grid-template-columns: 250px 1fr 1fr;
     grid-template-areas:
         "nav nav nav"
         "aside main main"

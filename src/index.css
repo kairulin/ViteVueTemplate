@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer components {
+    .slide-enter-active,
+    .slide-leave-active {
+        @apply transition-[max-height] duration-1000 ease-in-out;
+    }
+
+    .slide-enter-from,
+    .slide-leave-to{
+        @apply max-h-0 overflow-hidden;
+    }
+
+    .slide-enter-to,
+    .slide-leave-from {
+        @apply max-h-[500px] overflow-hidden
+    }
+} */
