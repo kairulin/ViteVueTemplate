@@ -10,7 +10,8 @@
         </aside>
         <main>
             main
-            <CustomVirtualScroll/>
+            <!-- <CustomVirtualScroll/> -->
+            <UseVirtualHook />
         </main>
         <footer>footer</footer>
     </div>
@@ -19,6 +20,7 @@
 // import Navigation from './Navigation.vue';
 import CustomNavigation from './CustomNavigation.vue';
 import CustomVirtualScroll from './CustomVirtualScroll.vue';
+import UseVirtualHook from './UseVirtualHook.vue';
 </script>
 <style scoped>
 .layout {
