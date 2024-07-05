@@ -4,7 +4,7 @@ import type { Ref } from 'vue';
 interface Item {
     text: string;
 }
-export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: Ref<Item[]>) {
+export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: Item[]) {
       // Define a mixin object (if needed)
   const passiveSupportMixin = {
     methods: {
@@ -29,20 +29,13 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: R
       }
     }
   };
-
-  // Reactive variables
-//   const items: Ref<Item[]> = ref(new Array(10000)
-//     .fill(null)
-//     .map((_, index) => ({ text: `Item ${index + 1}` }))
-//   );
-
   const rootHeight: Ref<number> = ref(400);
   const rowHeight: Ref<number> = ref(30);
   const scrollTop: Ref<number> = ref(0);
   const nodePadding: Ref<number> = ref(20);
 
    // Computed properties
-   const itemCount: Ref<number> = computed(() => items.value.length);
+   const itemCount: Ref<number> = computed(() => items.length);
   
    const startIndex: Ref<number> = computed(() => {
      let startNode =
@@ -58,8 +51,10 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: R
      return count;
    });
    
-   const visibleItems: Ref<Item[]> = computed(() =>
-     items.value.slice(startIndex.value, startIndex.value + visibleNodeCount.value)
+   const visibleItems: Ref<Item[]> = computed(() => {
+     if(!items || items.length === 0) return [];
+      return items.slice(startIndex.value, startIndex.value + visibleNodeCount.value)
+    }
    );
    
    const offsetY: Ref<number> = computed(() => startIndex.value * rowHeight.value);
@@ -67,7 +62,6 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: R
    const spacerStyle: Ref<{ transform: string }> = computed(() => ({
      transform: `translateY(${offsetY.value}px)`
    }));
-   
    // Event handler
    function handleScroll(event: Event) {
      scrollTop.value = (event.target as Element).scrollTop;
@@ -108,6 +102,7 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: R
     spacerStyle,
     handleScroll,
     visibleItems,
-    rowHeight
+    rowHeight,
+    offsetY
    }
 }

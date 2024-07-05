@@ -5,13 +5,14 @@
             <!-- <Navigation /> -->
         </nav>
         <aside>
-            aside 
+            aside
             <CustomNavigation />
         </aside>
         <main>
             main
             <!-- <CustomVirtualScroll/> -->
-            <UseVirtualHook />
+            <!-- <UseVirtualHook /> -->
+            <VirtualTable />
         </main>
         <footer>footer</footer>
     </div>
@@ -21,6 +22,7 @@
 import CustomNavigation from './CustomNavigation.vue';
 import CustomVirtualScroll from './CustomVirtualScroll.vue';
 import UseVirtualHook from './UseVirtualHook.vue';
+import VirtualTable from './VirtualTable.vue';
 </script>
 <style scoped>
 .layout {

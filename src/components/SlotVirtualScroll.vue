@@ -1,9 +1,8 @@
 <template>
-    table
     <div ref="root" class="root" style="height: 400px; overflow: auto" @scroll="handleScroll">
         <div class="spacer" :style="spacerStyle">
-            <div v-for="(item, index) in visibleItems" :key="index" class="item" :style="{ height: `${rowHeight}px` }">
-                {{ item.text }}
+            <div class="item" :style="{ height: `${rowHeight}px` }">
+                <slot :data="visibleItems" :offsetY="offsetY"/>
             </div>
         </div>
     </div>
@@ -13,21 +12,21 @@
 import { ref } from 'vue';
 import type { Ref } from 'vue';
 import useVirtualScroll from '@/hooks/useVirtualScroll';
-interface Item {
-    text: string;
-}
+import type { Item } from '../type.d.ts'
+const props = withDefaults(defineProps<{
+    data: Item[]
+}>(), {
+    data: []
+})
 
 
-// Reactive variables
+// Ref for the root element
+const root: Ref<HTMLElement | null> = ref(null);
 const items: Ref<Item[]> = ref(new Array(10000)
     .fill(null)
     .map((_, index) => ({ text: `Item ${index + 1}` }))
 );
-
-// Ref for the root element
-const root: Ref<HTMLElement | null> = ref(null);
-
-const { spacerStyle, handleScroll, visibleItems, rowHeight } = useVirtualScroll(root, items)
+const { spacerStyle, handleScroll, visibleItems, rowHeight, offsetY } = useVirtualScroll(root, props.data);
 
 </script>
 
@@ -38,7 +37,7 @@ const { spacerStyle, handleScroll, visibleItems, rowHeight } = useVirtualScroll(
 
 .item {
     box-sizing: border-box;
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     line-height: 30px;
     padding-left: 10px;
 }

@@ -3,3 +3,7 @@ export interface RouteConfig {
     name: string;
     children: RouteConfig[];
 }
+
+export interface Item {
+    text: string;
+}
