@@ -1,14 +1,15 @@
 <template>
-    <div class="container">
+    <div class="layout">
         <nav>
             header
             <!-- <Navigation /> -->
         </nav>
         <aside>
-            aside
+            aside 
             <CustomNavigation />
         </aside>
-        <main>main
+        <main>
+            main
             <CustomVirtualScroll/>
         </main>
         <footer>footer</footer>
@@ -20,7 +21,7 @@ import CustomNavigation from './CustomNavigation.vue';
 import CustomVirtualScroll from './CustomVirtualScroll.vue';
 </script>
 <style scoped>
-.container {
+.layout {
     display: grid;
     grid-template-rows: 70px 1fr 70px;
     /* grid-template-columns: 1fr 4fr 1fr; */
@@ -64,7 +65,7 @@ aside {
 
 main {
     grid-area: main;
-    background-color: #040d4c;
+    /* background-color: #040d4c; */
     /* Light Gray */
     color: black;
     /* padding: 20px; */
