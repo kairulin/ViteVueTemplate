@@ -2,21 +2,21 @@
     <div ref="root" class="root" style="height: 400px; overflow: auto" @scroll="handleScroll">
         <div class="spacer" :style="spacerStyle">
             <div class="item" :style="{ height: `${rowHeight}px` }">
-                <slot :data="visibleItems" :offsetY="offsetY"/>
+                <slot :data="visibleItems" :offsetY="offsetY" />
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { Ref } from 'vue';
+import { ref, withDefaults } from 'vue';
+import type { Ref, PropType } from 'vue';
 import useVirtualScroll from '@/hooks/useVirtualScroll';
-import type { Item } from '../type.d.ts'
+import type { Item, ItemWithNumber } from '../type.d.ts'
 const props = withDefaults(defineProps<{
-    data: Item[]
+    data: ItemWithNumber[]
 }>(), {
-    data: []
+    data: () => []
 })
 
 
@@ -26,8 +26,10 @@ const items: Ref<Item[]> = ref(new Array(10000)
     .fill(null)
     .map((_, index) => ({ text: `Item ${index + 1}` }))
 );
+// const { spacerStyle, handleScroll, visibleItems:rawVisibleItems, rowHeight, offsetY } = useVirtualScroll(root, props.data);
 const { spacerStyle, handleScroll, visibleItems, rowHeight, offsetY } = useVirtualScroll(root, props.data);
 
+// const visibleItems: ItemWithNumber[] = rawVisibleItems.value.map((item) => item as ItemWithNumber);
 </script>
 
 <style scoped>

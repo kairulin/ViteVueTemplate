@@ -72,6 +72,9 @@ main {
     /* background-color: #040d4c; */
     /* Light Gray */
     color: black;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
     /* padding: 20px; */
 }
 

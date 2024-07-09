@@ -1,5 +1,7 @@
 <template>
     <div class="table-wrapper">
+        {{width}}
+        {{ height }}
         <SlotVirtualScroll v-slot="{ data, offsetY }" :data="items">
             <table class="table">
                 <thead class="table__thead" :style="{ position: 'sticky', top: `-${offsetY}px` }">
@@ -9,7 +11,7 @@
                     </tr>
                 </thead>
                 <tbody class="table__body spacer">
-                    <tr v-for="(item, index) in data" :key="index">
+                    <tr v-for="(item, index) in (data as ItemWithNumber[])" :key="index">
                         <td>{{ item.number }}</td>
                         <td>{{ item.text }}</td>
                     </tr>
@@ -21,10 +23,12 @@
 <script setup lang="ts">
 import SlotVirtualScroll from './SlotVirtualScroll.vue';
 import { ref } from 'vue';
-import type { Item } from '../type.d.ts'
-
+import type { ItemWithNumber } from '../type.d.ts';
+import type { Ref } from 'vue';
+import useWindowSize from '@/hooks/useWindowSize.ts';
+const { width, height } = useWindowSize();
 // Reactive variables
-const items: Ref<Item[]> = ref(new Array(10000)
+const items: Ref<ItemWithNumber[]> = ref(new Array(10000)
     .fill(null)
     .map((_, index) => ({ number: index, text: `Item ${index + 1}` }))
 );

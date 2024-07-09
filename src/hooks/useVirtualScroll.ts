@@ -4,6 +4,12 @@ import type { Ref } from 'vue';
 interface Item {
     text: string;
 }
+/**
+ * 
+ * @param root dom元素的ref
+ * @param items 傳入的陣列
+ * @returns 
+ */
 export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: Item[]) {
       // Define a mixin object (if needed)
   const passiveSupportMixin = {
