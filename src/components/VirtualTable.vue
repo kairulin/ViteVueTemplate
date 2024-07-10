@@ -42,7 +42,7 @@ const items: Ref<ItemWithNumber[]> = ref(new Array(10000)
 .table {
     width: 100%;
     &__thead {
-        background-color: #fff;
+        background-color: var(--background);
         //     position: sticky; top: 0;
     }
 

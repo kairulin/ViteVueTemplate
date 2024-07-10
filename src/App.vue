@@ -24,8 +24,8 @@ import GridLayout from './components/GridLayout.vue';
   <!-- <router-link to="/button-page">Button Page</router-link> -->
   <!-- <RouterView /> -->
   <!-- <Test /> -->
-   <GridLayout />
-    <!-- <Navigation /> -->
+  <GridLayout />
+  <!-- <Navigation /> -->
 </template>
 
 <style>
@@ -40,4 +40,3 @@ body {
   /* background-image: radial-gradient(#320644, #140534); */
 }
 </style>
-

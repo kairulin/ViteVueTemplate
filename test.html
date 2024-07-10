@@ -1,0 +1,22 @@
+<!-- test original web -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body:has(option[value="dark"]:checked) {
+            --background: black;
+            --text-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <select>
+        <option value="light">lightmode</option>
+        <option value="dark">darkmode</option>
+    </select>
+    test
+</body>
+</html>

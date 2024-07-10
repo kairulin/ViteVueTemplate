@@ -9,10 +9,16 @@
             <CustomNavigation />
         </aside>
         <main>
+            <select>
+                <option value="light">lightmode</option>
+                <option value="dark">darkmode</option>
+            </select>
             main
             <!-- <CustomVirtualScroll/> -->
             <!-- <UseVirtualHook /> -->
             <VirtualTable />
+            <!-- <CarouselCard/> -->
+             <CustomTree :data="[]"/>
         </main>
         <footer>footer</footer>
     </div>
@@ -23,6 +29,8 @@ import CustomNavigation from './CustomNavigation.vue';
 import CustomVirtualScroll from './CustomVirtualScroll.vue';
 import UseVirtualHook from './UseVirtualHook.vue';
 import VirtualTable from './VirtualTable.vue';
+import CustomTree from './CustomTree.vue';
+// import CarouselCard from './CarouselCard.vue';
 </script>
 <style scoped>
 .layout {
@@ -71,13 +79,30 @@ main {
     grid-area: main;
     /* background-color: #040d4c; */
     /* Light Gray */
-    color: black;
+    background: var(--background);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     overflow: auto;
-    /* padding: 20px; */
-}
 
+    /* padding: 20px; */
+    &:has(option[value="dark"]:checked) {
+        --background: black;
+        --text-color: white;
+        --select-background: white;
+        --select-text-color: black;
+        /* select {
+            color: initial !important;
+        } */
+    }
+}
+select {
+    background: var(--select-background);
+    color: var(--select-text-color);
+    width: max-content;
+    border-radius: 5px;
+    padding: 3px 5px;
+}
 footer {
     grid-area: footer;
     background-color: #555;

@@ -1,7 +1,14 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
+
+:root{
+    --background: white;
+    --text-color: black;
+    --select-background: black;
+    --select-text-color: white;
+}
 /* @layer components {
     .slide-enter-active,
     .slide-leave-active {

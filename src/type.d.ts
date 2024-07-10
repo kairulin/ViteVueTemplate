@@ -2,6 +2,7 @@ export interface RouteConfig {
     path?: string;
     name: string;
     children: RouteConfig[];
+    component?: any
 }
 
 export interface Item {

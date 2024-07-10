@@ -10,6 +10,7 @@ const generateRoutes = (list: RouteConfig[], basePath = '') => {
             name: item.name,
             children: [],
             // component: () => import(`@/views/${item.name.replace(/\s+/g, '')}.vue`) // 动态导入组件
+            component: () => import(`@/components/GridLayout.vue`) // 动态导入组件
         };
 
         if (item.children && item.children.length > 0) {

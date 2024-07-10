@@ -1,5 +1,4 @@
 <template>
-
     <el-tree ref="treeRef" :data="data" :props="{ class: customNodeClass }" show-checkbox node-key="code"
         default-expand-all @check="changeCheck" />
 </template>
