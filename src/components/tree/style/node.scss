@@ -1,0 +1,14 @@
+.nibu-tree {
+    // background-color: red;
+    &__node {
+        padding-left: 20px;
+        user-select: none;
+        cursor: pointer;
+        &__name--empty{
+            cursor: auto !important;         
+            &::marker {
+                color: transparent;
+            }
+        }
+    }
+}

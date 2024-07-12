@@ -27,7 +27,7 @@ const items: Ref<Item[]> = ref(new Array(10000)
 // Ref for the root element
 const root: Ref<HTMLElement | null> = ref(null);
 
-const { spacerStyle, handleScroll, visibleItems, rowHeight } = useVirtualScroll(root, items)
+const { spacerStyle, handleScroll, visibleItems, rowHeight } = useVirtualScroll(root, items.value)
 
 </script>
 

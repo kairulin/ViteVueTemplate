@@ -1,12 +1,13 @@
 <template>
-    <div class="tree" v-for="node in data" :key="node.id">
-        <details class="tree__node" v-if="node.children">
+    <NibuTree v-model="data"/>
+    <!-- <div class="tree" v-for="node in data" :key="node.id">
+        <details class="tree__node" v-if="node.children" @click.stop="handleToggle">
             <summary class="tree__node__marker">
                 <input type="checkbox" v-model="node.checked" @change="changeAll(node)"
                     :indeterminate="node.indeterminate" />
                 {{ node.name }}
             </summary>
-            <div class="tree__node__children">
+            <div class="tree__node__children" v-if="isOpen">
                 <CustomTree :data="node.children" @node-checked="nodeChecked(node)" />
             </div>
         </details>
@@ -16,11 +17,12 @@
                 {{ node.name }}
             </summary>
         </details>
-    </div>
+    </div> -->
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import CustomTree from './CustomTree.vue';
+import NibuTree from './tree/index.tsx'
 import type { Ref } from 'vue';
 interface Node {
     id: number;
@@ -35,6 +37,7 @@ const props = withDefaults(defineProps<{
     data: () => []
 })
 const emit = defineEmits(['nodeChecked'])
+// 遞迴生成數據
 const generateData = (id: number, depth: number): Node => {
     if (depth <= 0) {
         return { id, name: `Child ${id}` };
@@ -53,8 +56,32 @@ const generateData = (id: number, depth: number): Node => {
         };
     }
 };
+// 迴圈生成數據
+// 迴圈方法
+const generateDataIterative = (id: number, depth: number): Node => {
+    const root: Node = { id, name: `Parent ${id}` };
+    const stack: { node: Node; currentDepth: number }[] = [{ node: root, currentDepth: depth }];
+
+    while (stack.length > 0) {
+        const { node, currentDepth } = stack.pop()!;
+
+        if (currentDepth > 0) {
+            node.children = [];
+            for (let i = 1; i <= 2; i++) { // 修改這裡以增加每個節點的子節點數量
+                const childId = node.id * 10 + i;
+                const childNode: Node = { id: childId, name: `Child ${childId}` };
+                node.children.push(childNode);
+                stack.push({ node: childNode, currentDepth: currentDepth - 1 });
+            }
+        }
+    }
+
+    return root;
+};
 // Generate data with depth of 100
+// const localData: Node[] = [generateDataIterative(1, 8)];
 const localData: Node[] = [generateData(1, 3)];
+
 // const localData: Node[] = [
 //     {
 //         id: 1,
@@ -122,6 +149,10 @@ const nodeChecked = (node: Node) => {
         node.indeterminate = false;
     }
     emit('nodeChecked', node.checked)
+}
+const isOpen = ref(false)
+const handleToggle = (event: Event) => {
+    isOpen.value = !isOpen.value
 }
 onMounted(() => {
     data.value.forEach(node => {

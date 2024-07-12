@@ -46,5 +46,9 @@ const navList = [
         name: "Sports",
         children: []
     },
+    {
+        name: "About",
+        children: []
+    }
 ]
 export default navList
