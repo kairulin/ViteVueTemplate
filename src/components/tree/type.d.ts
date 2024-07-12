@@ -1,4 +1,4 @@
-export interface TreeNodeData {
+declare interface TreeNodeData {
     id: number;
     name: string;
     children?: TreeNodeData[];

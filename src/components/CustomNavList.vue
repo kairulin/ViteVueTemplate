@@ -24,7 +24,6 @@
 import { cva } from 'class-variance-authority';
 import { computed, ref } from 'vue';
 import CustomNavList from './CustomNavList.vue'
-import type { RouteConfig } from '../type.d.ts'
 
 const props = withDefaults(defineProps<{
     navList: RouteConfig[],

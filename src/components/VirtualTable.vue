@@ -23,7 +23,6 @@
 <script setup lang="ts">
 import SlotVirtualScroll from './SlotVirtualScroll.vue';
 import { ref } from 'vue';
-import type { ItemWithNumber } from '../type.d.ts';
 import type { Ref } from 'vue';
 import useWindowSize from '@/hooks/useWindowSize.ts';
 const { width, height } = useWindowSize();

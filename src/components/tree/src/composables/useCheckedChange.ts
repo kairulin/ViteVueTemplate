@@ -1,4 +1,3 @@
-import type { TreeNodeData } from '../../type';
 const useCheckedChange = (node:TreeNodeData, emit:(event: "nodeChecked", ...args: any[]) => void) => {
     const changeAll = (node:TreeNodeData) => {
         if(node.children) {

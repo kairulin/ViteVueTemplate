@@ -9,7 +9,6 @@ import {
 } from 'vue';
 import TreeNode from './node';
 import type { PropType, VNode } from 'vue';
-import type { TreeNodeData } from '../type';
 
 export default defineComponent({
     props: {      

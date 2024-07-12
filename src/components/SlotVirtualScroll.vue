@@ -12,7 +12,6 @@
 import { ref, withDefaults } from 'vue';
 import type { Ref, PropType } from 'vue';
 import useVirtualScroll from '@/hooks/useVirtualScroll';
-import type { Item, ItemWithNumber } from '../type.d.ts'
 const props = withDefaults(defineProps<{
     data: ItemWithNumber[]
 }>(), {

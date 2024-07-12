@@ -9,7 +9,6 @@ import {
 import TreeNode from './node';
 import '../style/node.scss';
 import type {PropType} from 'vue';
-import type { TreeNodeData } from '../type';
 
 export default defineComponent({
     name: 'NibuTree',

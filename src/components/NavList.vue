@@ -16,7 +16,6 @@
 </template>
 <script setup lang="ts">
 import NavList from './NavList.vue'
-import type { RouteConfig } from '../type.d.ts'
 
 defineProps<{
     navList: RouteConfig[]

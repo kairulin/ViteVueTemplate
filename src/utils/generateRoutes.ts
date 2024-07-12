@@ -1,5 +1,4 @@
 import navList from './nav.ts'
-import type { RouteConfig } from '../type'
 const generateRoutes = (list: RouteConfig[], basePath = '') => {   
     const routes: RouteConfig[] = [];
 

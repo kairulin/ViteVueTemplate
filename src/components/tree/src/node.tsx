@@ -10,7 +10,6 @@ import {
 } from 'vue';
 import TreeChildNode from './branch.tsx';
 import type { PropType, VNode } from 'vue';
-import type { TreeNodeData } from '../type';
 
 export default defineComponent({
     props: {
