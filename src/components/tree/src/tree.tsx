@@ -6,7 +6,7 @@ import {
     createVNode,
     renderList
 } from 'vue';
-import TreeNode from './node';
+import TreeNode from './node.tsx';
 import '../style/node.scss';
 import type {PropType} from 'vue';
 

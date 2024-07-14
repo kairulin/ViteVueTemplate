@@ -5,7 +5,7 @@ import {
     createVNode,
     Fragment,
     createCommentVNode,
-    renderList
+    renderList 
 } from 'vue';
 import TreeNode from './node';
 import type { PropType, VNode } from 'vue';

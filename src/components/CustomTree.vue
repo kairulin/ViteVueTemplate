@@ -1,4 +1,5 @@
 <template>
+{{data}}
     <NibuTree v-model="data"/>
     <!-- <div class="tree" v-for="node in data" :key="node.id">
         <details class="tree__node" v-if="node.children" @click.stop="handleToggle">
