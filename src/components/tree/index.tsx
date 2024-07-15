@@ -1,3 +1,3 @@
-import NibuTree from './src/tree.tsx'
+import KaiTree from './src/tree.tsx'
 
-export default NibuTree
+export default KaiTree

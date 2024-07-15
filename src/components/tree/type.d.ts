@@ -1,6 +1,6 @@
-declare interface TreeNodeData {
+export interface TreeNodeData {
     id: number;
     name: string;
-    children?: TreeNodeData[];
+    children: TreeNodeData[];
     checked?:boolean;
 }
