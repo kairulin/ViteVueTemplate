@@ -1,5 +1,5 @@
 <template>
-{{data}}
+<!-- {{data}} -->
     <NibuTree v-model="data"/>
     <!-- <div class="tree" v-for="node in data" :key="node.id">
         <details class="tree__node" v-if="node.children" @click.stop="handleToggle">
@@ -41,7 +41,7 @@ const emit = defineEmits(['nodeChecked'])
 // 遞迴生成數據
 const generateData = (id: number, depth: number): Node => {
     if (depth <= 0) {
-        return { id, name: `Child ${id}` };
+        return { id, name: `Child ${id}`,children:[] };
     } else {
         return {
             id,
@@ -81,7 +81,7 @@ const generateDataIterative = (id: number, depth: number): Node => {
 };
 // Generate data with depth of 100
 // const localData: Node[] = [generateDataIterative(1, 8)];
-const localData: Node[] = [generateData(1, 3)];
+const localData: Node[] = [generateData(1, 15)];
 
 // const localData: Node[] = [
 //     {

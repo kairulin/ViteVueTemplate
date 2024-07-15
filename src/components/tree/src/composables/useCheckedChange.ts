@@ -15,8 +15,6 @@ const useCheckedChange = (node:TreeNodeData) => {
         if(node.children) {
             const isTrue = node.children.some(child => child.checked)
             const isFalse = node.children.some(child => !child.checked)
-            console.log('node', node)
-            console.log('value', value)
              // 如果有勾選，但是也有沒勾選的，就是indeterminate
             if (isTrue && isFalse) {
                 indeterminate = true;
@@ -31,7 +29,6 @@ const useCheckedChange = (node:TreeNodeData) => {
                 indeterminate = value ? true : false;
                 node.checked = undefined;
             }
-            console.log('indeterminate', indeterminate) 
         }
         return indeterminate
     }

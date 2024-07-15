@@ -39,4 +39,7 @@ body {
   /* overflow: hidden; */
   /* background-image: radial-gradient(#320644, #140534); */
 }
+input {
+  border: 1px solid black;
+}
 </style>

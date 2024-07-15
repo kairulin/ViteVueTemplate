@@ -19,6 +19,9 @@
             <VirtualTable />
             <!-- <CarouselCard/> -->
              <CustomTree :data="[]"/>
+              <!-- {{ value }} -->
+              <!-- <NibuInput  v-model="value"/> -->
+              <!-- <input v-model="value"/> -->
         </main>
         <footer>footer</footer>
     </div>
@@ -30,7 +33,10 @@ import CustomVirtualScroll from './CustomVirtualScroll.vue';
 import UseVirtualHook from './UseVirtualHook.vue';
 import VirtualTable from './VirtualTable.vue';
 import CustomTree from './CustomTree.vue';
+import NibuInput from './input/index.tsx'
+import { ref } from 'vue';
 // import CarouselCard from './CarouselCard.vue';
+const value = ref('123')
 </script>
 <style scoped>
 .layout {

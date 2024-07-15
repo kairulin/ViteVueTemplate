@@ -6,10 +6,6 @@ export default defineComponent({
         modelValue: {
             type: Boolean,
             default: false
-        },
-        indeterminate: {
-            type: Boolean,
-            default: false
         }
     },
     setup(__props, {emit}) {
@@ -25,6 +21,7 @@ export default defineComponent({
             updateIndeterminate();
         })
         watch(() => __props.indeterminate, updateIndeterminate)
+
         watch(() => __props.modelValue, (newVal) => {
             const checkbox = checkboxRef.value as HTMLInputElement;
             checkbox.checked = newVal;
