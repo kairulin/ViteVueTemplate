@@ -110,7 +110,6 @@ input {
         padding: 10px 10px 10px 50px;
         position: relative;
         color: #7f91a1;
-        ;
     }
 
     li li::before {

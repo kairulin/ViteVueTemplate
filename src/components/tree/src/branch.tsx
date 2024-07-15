@@ -31,15 +31,16 @@ export default defineComponent({
         return (_ctx:any):VNode => {
             return (
                 openBlock(),
-                createElementBlock("div", {
-                    class: normalizeClass(["nibu-tree__branch"])
+                createElementBlock("div", {                    
+                    // class: normalizeClass(["nibu-tree__branch"])
                 }, 
                     _ctx.node.children.length ? 
                     (renderList(_ctx.node.children, (node, index) => 
                         (createVNode(TreeNode, {
                             key: index, 
                             node,
-                            onIndeterminate: nodeIndeterminate
+                            onIndeterminate: nodeIndeterminate,
+                            class: normalizeClass(["nibu-tree__branch"])
                         },null, 8 /* PROPS */, ["node","onIndeterminate"]))
                     ))
                     :
