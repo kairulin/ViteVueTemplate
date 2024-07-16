@@ -1,7 +1,8 @@
 declare interface RouteConfig {
-    path?: string;
+    path: string;
     name: string;
     children: RouteConfig[];
+    nickname?: string;
     component?: any
 }
 

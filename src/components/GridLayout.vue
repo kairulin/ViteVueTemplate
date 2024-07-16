@@ -9,19 +9,17 @@
             <CustomNavigation />
         </aside>
         <main>
-            <select>
+            <select v-model="webStyle">
                 <option value="light">lightmode</option>
                 <option value="dark">darkmode</option>
             </select>
-            main
+            <p>現在網頁寬：{{width}}、高{{height}}</p>
             <!-- <CustomVirtualScroll/> -->
             <!-- <UseVirtualHook /> -->
-            <VirtualTable />
+            <!-- <VirtualTable /> -->
             <!-- <CarouselCard/> -->
-             <CustomTree :data="[]"/>
-              <!-- {{ value }} -->
-              <!-- <NibuInput  v-model="value"/> -->
-              <!-- <input v-model="value"/> -->
+             <!-- <CustomTree :data="[]"/> -->
+             <router-view />
         </main>
         <footer>footer</footer>
     </div>
@@ -33,10 +31,12 @@ import CustomVirtualScroll from './CustomVirtualScroll.vue';
 import UseVirtualHook from './UseVirtualHook.vue';
 import VirtualTable from './VirtualTable.vue';
 import CustomTree from './CustomTree.vue';
-import NibuInput from './input/index.tsx'
 import { ref } from 'vue';
 // import CarouselCard from './CarouselCard.vue';
+import useWindowSize from '@/hooks/useWindowSize.ts';
+const { width, height } = useWindowSize();
 const value = ref('123')
+const webStyle = ref('light')
 </script>
 <style scoped>
 .layout {

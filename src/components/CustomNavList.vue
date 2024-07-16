@@ -3,11 +3,11 @@
         <li v-for="(nav) in navList" :key="nav.name" :class="navClass" @click.stop="handleShow(nav)">
             <div class="flex items-center">
                 <a class="flex w-full" v-if="childrenLength(nav.children)">
-                    {{ nav.name }}
+                    {{ nav.nickname }}
                 </a>
-                <a class="flex w-full" :href="nav.path" v-else>
-                    {{ nav.name }}
-                </a>
+                <router-link class="flex w-full" :to="nav.path" v-else>
+                    {{ nav.nickname }}
+                </router-link>
                 <i class="fa-solid fa-angle-down duration-500" :class="{
                     [`transform rotate-180 duration-500`]: childrenShow
                 }" v-if="childrenLength(nav.children)" />

@@ -1,7 +1,7 @@
 <template>
     <ul class="menu">
         <li v-for="(nav) in navList" :key="nav.name">
-            <a href="google.com" class="w-full">
+            <a class="w-full">
                 {{ nav.name }}
             </a>
             <label v-if="nav.children.length > 0">

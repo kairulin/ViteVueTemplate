@@ -1,7 +1,5 @@
 <template>
     <div class="table-wrapper">
-        {{width}}
-        {{ height }}
         <SlotVirtualScroll v-slot="{ data, offsetY }" :data="items">
             <table class="table">
                 <thead class="table__thead" :style="{ position: 'sticky', top: `-${offsetY}px` }">
@@ -24,8 +22,6 @@
 import SlotVirtualScroll from './SlotVirtualScroll.vue';
 import { ref } from 'vue';
 import type { Ref } from 'vue';
-import useWindowSize from '@/hooks/useWindowSize.ts';
-const { width, height } = useWindowSize();
 // Reactive variables
 const items: Ref<ItemWithNumber[]> = ref(new Array(10000)
     .fill(null)

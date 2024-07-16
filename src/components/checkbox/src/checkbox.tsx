@@ -6,6 +6,10 @@ export default defineComponent({
         modelValue: {
             type: Boolean,
             default: false
+        },
+        indeterminate: {
+            type: Boolean,
+            default: false
         }
     },
     setup(__props, {emit}) {
@@ -18,7 +22,7 @@ export default defineComponent({
         onMounted(() => {
             const checkbox = checkboxRef.value as HTMLInputElement;
             checkbox.checked = __props.modelValue;
-            updateIndeterminate();
+            // updateIndeterminate();
         })
         watch(() => __props.indeterminate, updateIndeterminate)
 
