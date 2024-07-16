@@ -1,7 +1,7 @@
 <template>
     <ul class="w-full">
-        <li v-for="(nav) in navList" :key="nav.name" :class="navClass" @click.stop="handleShow(nav)">
-            <div class="flex items-center">
+        <li v-for="(nav) in list" :key="nav.name" :class="navClass" @click.stop="handleShow(nav)">
+            <div class="flex items-center" >
                 <a class="flex w-full" v-if="childrenLength(nav.children)">
                     {{ nav.nickname }}
                 </a>
@@ -12,10 +12,10 @@
                     [`transform rotate-180 duration-500`]: childrenShow
                 }" v-if="childrenLength(nav.children)" />
             </div>
-
             <transition name="slide" v-if="childrenLength(nav.children)">
                 <CustomNavList :nav-list="nav.children" :index="false" :intent="'secondary'" :before="'secondary'"
-                    :after="'secondary'" :hover="'primary'" v-show="childrenShow" />
+                :after="'secondary'" :hover="'primary'" v-show="nav.show" />
+
             </transition>
         </li>
     </ul>
@@ -24,7 +24,6 @@
 import { cva } from 'class-variance-authority';
 import { computed, ref } from 'vue';
 import CustomNavList from './CustomNavList.vue'
-
 const props = withDefaults(defineProps<{
     navList: RouteConfig[],
     index: Boolean,
@@ -38,14 +37,16 @@ const props = withDefaults(defineProps<{
     before: 'primary',
     after: 'primary'
 })
-const childrenLength = (children:RouteConfig[]) => {
+const list = ref(props.navList)
+const childrenLength = (children: RouteConfig[]) => {
     return children.length > 0
 }
 const childrenShow = ref(false)
 
 const handleShow = (nav: RouteConfig) => {
     if (nav.children.length > 0) {
-        childrenShow.value = !childrenShow.value
+        nav.show = !nav.show
+        // childrenShow.value = !childrenShow.value
     }
 }
 

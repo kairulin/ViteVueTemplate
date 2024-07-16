@@ -23,6 +23,10 @@ export default defineComponent({
         node: {
             type: Object as PropType<TreeNodeData>,
             default: () => ({} as TreeNodeData)
+        },
+        vertical: {
+            type: Boolean as PropType<boolean>,
+            default: false
         }
     },
     setup(__props, { attrs, expose, emit }) {
@@ -57,8 +61,7 @@ export default defineComponent({
         })
         return (_ctx: any,_cache:any): VNode => {
             return openBlock(), createElementBlock("details", {
-                ...attrs,
-                class: normalizeClass(["nibu-tree__node", attrs.class]),
+                class: normalizeClass(["nibu-tree__node"]),
                 open: _cache[0] || (_cache[0] = isOpen.value),
                 onToggle: handleToggle,                
             }, [
@@ -76,8 +79,10 @@ export default defineComponent({
                     , 512 /* NEED_PATCH */),
                 (_ctx.node.children.length && isOpen.value || _cache[0]) ?
                     (createVNode(TreeBranch, {
+                        ...attrs,
                         node: _ctx.node,                       
-                        onIndeterminate: branchIndeterminate
+                        onIndeterminate: branchIndeterminate,
+                        vertical:_ctx.vertical
                     }, null, 16 /* PROPS */, ["node", "indeterminate", "onIndeterminate"]))
                     :
                     (createCommentVNode("v-if", true))

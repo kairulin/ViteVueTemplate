@@ -3,7 +3,8 @@ declare interface RouteConfig {
     name: string;
     children: RouteConfig[];
     nickname?: string;
-    component?: any
+    component?: any;
+    show?: boolean;
 }
 
 declare interface Item {   

@@ -20,9 +20,13 @@ export default defineComponent({
         node: {
             type: Object as PropType<TreeNodeData>,
             default: () => ({} as TreeNodeData)
+        },
+        vertical: {
+            type: Boolean as PropType<boolean>,
+            default: false
         }
     },
-    setup(__props,{emit}) {   
+    setup(__props,{attrs, emit}) {   
         // 收到節點的變化，檢查indeterminate
         const nodeIndeterminate = (value:boolean) => {
             // 告訴上層的node，現在的indeterminate狀態
@@ -32,7 +36,7 @@ export default defineComponent({
             return (
                 openBlock(),
                 createElementBlock("div", {                    
-                    // class: normalizeClass(["nibu-tree__branch"])
+                    class: normalizeClass([_ctx.vertical ? 'vertical' : ''])
                 }, 
                     _ctx.node.children.length ? 
                     (renderList(_ctx.node.children, (node, index) => 
@@ -40,7 +44,8 @@ export default defineComponent({
                             key: index, 
                             node,
                             onIndeterminate: nodeIndeterminate,
-                            class: normalizeClass(["nibu-tree__branch"])
+                            class: normalizeClass([_ctx.vertical ? 'nibu-tree__vertical' : 'nibu-tree__branch']),
+                            vertical:_ctx.vertical
                         },null, 8 /* PROPS */, ["node","onIndeterminate"]))
                     ))
                     :

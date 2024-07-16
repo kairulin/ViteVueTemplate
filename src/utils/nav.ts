@@ -1,16 +1,43 @@
 const navList = [
     {
-        name: "Virtual Scroll Table",
-        path: "virtual-scroll-table",
-        nickname: "虛擬滾動表格",
-        children: []
+        name: "Virtual Scroll List",
+        nickname: "虛擬滾動列表",
+        path: 'virtual-scroll-list',
+        children: [
+            {
+                name: "Virtual Scroll",
+                path: "base",
+                nickname: "虛擬滾動",
+                children:[]
+            },
+            {                
+                name: "Virtual Scroll Table",
+                path: "table",
+                nickname: "虛擬滾動表格",
+                children: []                
+            },
+        ]
     },
     {
-        name: "Tree",
-        path: "tree",
-        nickname: "樹狀",
-        children: []
+        name: "Tree List",
+        path: "tree-list",
+        nickname: "樹狀列表",
+        children: [
+            {
+                name: "Tree",
+                path: "base",
+                nickname: "樹狀",
+                children: []
+            },
+            {
+                name: "RenderFunctionTree",
+                path: "render-function-tree",
+                nickname: "渲染函式樹狀",
+                children: []
+            },
+        ]
     },
+    
     // {
     //     name: "HOME",
     //     children: [

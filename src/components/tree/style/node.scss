@@ -43,3 +43,10 @@
         }
     }
 }
+.vertical {
+    display: flex;
+    text-align: center;
+    >details {
+        flex: 1;
+    }
+}

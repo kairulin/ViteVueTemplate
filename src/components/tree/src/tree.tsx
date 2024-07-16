@@ -18,18 +18,23 @@ export default defineComponent({
         modelValue: {
             type: Array as PropType<TreeNodeData[]>,
             default: () => []
+        },
+        vertical: {
+            type: Boolean as PropType<boolean>,
+            default: false
         }
     },
     setup(props, { attrs, expose, emit }) {
         return (_ctx:any) => {
-            return openBlock(), createElementBlock("div", {
-                ...attrs,
-                class: normalizeClass(["nibu-tree", attrs.class]),
+            return openBlock(), createElementBlock("div", {                
+                class: normalizeClass(["nibu-tree", _ctx.vertical ? 'vertical' : '']),
             }, 
             renderList(_ctx.modelValue,(node, index) => 
                 (createVNode(TreeNode, { 
+                    // ...attrs,
                     key:index, 
                     node,
+                    vertical:_ctx.vertical
                 }, null, 8 /* PROPS */, ["node"]))
             )
             , 2 /* CLASS */)
