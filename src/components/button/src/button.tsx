@@ -6,11 +6,12 @@ import {
     toDisplayString,
     renderSlot,
     withCtx,
-    createVNode,
     resolveDynamicComponent,
-    createCommentVNode
+    createCommentVNode,
+    Fragment
 } from "vue";
 import type { VNode } from "vue";
+import '../style/button.scss';
 export default defineComponent({
     name: "NibuButton",
     props: {
@@ -35,24 +36,46 @@ export default defineComponent({
             default: false
         },
     },
-    setup(__props, { attrs, emit }) {
+    setup(__props, { attrs, expose, emit }) {
         return (_ctx: any): VNode => {
+            console.log(_ctx.loading)
             // 使用resolveDynamicComponent可幫我解析router-link
             return (openBlock(), createBlock(resolveDynamicComponent(_ctx.type), {
-                ...attrs
+                ...attrs,
+                class:[
+                    _ctx.border ? 'border' : 'no-border',
+                    _ctx.disabled ? 'disabled' : '',
+                ],
+                disabled : _ctx.disabled,
             },
                 {
                     default: withCtx(() => [
-                        (
-                            _ctx.$slots.default ? (openBlock(), createElementBlock(
-                                "span",
+                        
+                            _ctx.loading ? 
+                            (openBlock(), createElementBlock(
+                                "div",
                                 {},
                                 [
-                                    renderSlot(_ctx.$slots, "default", {}, () => [createVNode("span", null, "預設按鈕")])
-                                ]
+                                    _ctx.$slots.loading ? renderSlot(_ctx.$slots, "loading") :
+                                    (openBlock(), createBlock("span", null, "loading..."))
+                                    // {
+                                    //     default: withCtx(() => [
+                                    //         (openBlock(), createBlock(resolveDynamicComponent(_ctx.loadingIcon)))
+                                    //     ])
+                                    // }
+                                ], 
+                                64 /* STABLE_FRAGMENT */))
+                            : createCommentVNode("v-if", true),
+                            _ctx.$slots.default ? (openBlock(), createElementBlock(
+                                Fragment,
+                                {},
+                                    [
+                                        renderSlot(_ctx.$slots, "default", {}, () => [createBlock("span", null, "預設按鈕")])
+                                    ]
+                                , 64 /* STABLE_FRAGMENT */
                             ))
                             : createCommentVNode("v-if", true)
-                        )]                                       
+                        ]                                       
                     )
                 }
             ))
