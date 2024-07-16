@@ -87,8 +87,8 @@ main {
     /* Light Gray */
     background: var(--background);
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     overflow: auto;
 
     /* padding: 20px; */
