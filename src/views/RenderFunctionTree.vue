@@ -1,6 +1,5 @@
 <template>
-        <NibuTree v-model="data"/>
-
+    <NibuTree v-model="data" />
 </template>
 <script setup lang="ts">
 import NibuTree from '@/components/tree/index.tsx'
@@ -16,7 +15,7 @@ interface Node {
 // 遞迴生成數據
 const generateData = (id: number, depth: number): Node => {
     if (depth <= 0) {
-        return { id, name: `Child ${id}`,children:[] };
+        return { id, name: `Child ${id}`, children: [] };
     } else {
         return {
             id,

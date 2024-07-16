@@ -2,9 +2,7 @@ import {
     normalizeClass,
     defineComponent,
     openBlock,
-    createElementBlock,
-    createVNode,
-    unref,
+    createBlock,
     renderList
 } from 'vue';
 import TreeNode from './node';
@@ -26,11 +24,11 @@ export default defineComponent({
     },
     setup(props, { attrs, expose, emit }) {
         return (_ctx:any) => {
-            return openBlock(), createElementBlock("div", {                
+            return openBlock(), createBlock("div", {                
                 class: normalizeClass(["nibu-tree", _ctx.vertical ? 'vertical' : '']),
             }, 
             renderList(_ctx.modelValue,(node, index) => 
-                (createVNode(TreeNode, { 
+                (createBlock(TreeNode, { 
                     // ...attrs,
                     key:index, 
                     node,
@@ -38,8 +36,6 @@ export default defineComponent({
                 }, null, 8 /* PROPS */, ["node"]))
             )
             , 2 /* CLASS */)
-
-            
         }
     }
 })

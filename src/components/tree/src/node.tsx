@@ -2,8 +2,7 @@ import {
     normalizeClass,
     defineComponent,
     openBlock,
-    createElementBlock,
-    createVNode,
+    createBlock,
     createCommentVNode,
     toDisplayString,
     ref,
@@ -11,7 +10,6 @@ import {
     watch,
     onMounted,
     shallowRef,
-    nextTick
 } from 'vue';
 import TreeBranch from './branch.tsx';
 import type { PropType, VNode } from 'vue';
@@ -60,25 +58,25 @@ export default defineComponent({
             checkedAll(__props.node.checked as boolean)
         })
         return (_ctx: any,_cache:any): VNode => {
-            return openBlock(), createElementBlock("details", {
+            return openBlock(), createBlock("details", {
                 class: normalizeClass(["nibu-tree__node"]),
                 open: _cache[0] || (_cache[0] = isOpen.value),
                 onToggle: handleToggle,                
             }, [
-                createVNode("summary", {
+                (openBlock(), createBlock("summary", {
                     class: normalizeClass([_ctx.node.children.length ? "nibu-tree__node__name" : "nibu-tree__node__name--empty"])
                 },
                     [
-                        createVNode(NibuCheckbox, {
+                        (openBlock(), createBlock(NibuCheckbox, {
                             modelValue: _ctx.node.checked,
                             "onUpdate:modelValue": handleChange,
                             indeterminate: indeterminate.value,
-                        }, null, 16 /* PROPS */, ["modelValue", "onUpdate:modelValue", "indeterminate"]),
+                        }, null, 16 /* PROPS */, ["modelValue", "onUpdate:modelValue", "indeterminate"])),
                         createTextVNode(toDisplayString(_ctx.node.name), 1 /* TEXT */)
                     ]
-                    , 512 /* NEED_PATCH */),
+                    , 512 /* NEED_PATCH */)),
                 (_ctx.node.children.length && isOpen.value || _cache[0]) ?
-                    (createVNode(TreeBranch, {
+                    (openBlock(), createBlock(TreeBranch, {
                         ...attrs,
                         node: _ctx.node,                       
                         onIndeterminate: branchIndeterminate,

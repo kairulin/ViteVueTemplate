@@ -1,19 +1,14 @@
 import {
     defineComponent,
     openBlock,
-    createElementBlock,
-    createVNode,
-    Fragment,
+    createBlock,
     createCommentVNode,
     renderList,
     normalizeClass,
-    shallowRef,
-    watch
 } from 'vue';
 import TreeNode from './node';
 import type { PropType, VNode } from 'vue';
 import type { TreeNodeData } from '../type';
-import { useCheckedChange } from './composables/useCheckedChange.ts';
 
 export default defineComponent({
     props: {      
@@ -35,12 +30,12 @@ export default defineComponent({
         return (_ctx:any):VNode => {
             return (
                 openBlock(),
-                createElementBlock("div", {                    
+                createBlock("div", {                    
                     class: normalizeClass([_ctx.vertical ? 'vertical' : ''])
                 }, 
                     _ctx.node.children.length ? 
                     (renderList(_ctx.node.children, (node, index) => 
-                        (createVNode(TreeNode, {
+                        (createBlock(TreeNode, {
                             key: index, 
                             node,
                             onIndeterminate: nodeIndeterminate,
