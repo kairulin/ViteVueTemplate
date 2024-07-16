@@ -37,7 +37,25 @@ const navList = [
             },
         ]
     },
-    
+    {
+        name: "Button List",
+        path: "button-list",
+        nickname: "按鈕列表",
+        children: [
+            {
+                name: "ButtonPage",
+                path: "base",
+                nickname: "按鈕",
+                children: []
+            },
+            {
+                name: "RenderFunctionButton",
+                path: "render-function-button",
+                nickname: "渲染函式按鈕",
+                children: []
+            }
+        ]
+    }
     // {
     //     name: "HOME",
     //     children: [

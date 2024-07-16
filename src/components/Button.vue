@@ -74,6 +74,6 @@ const handleClick = () => {
         event?.preventDefault();
         return;
     }
-    routerBack()
+    // routerBack()
 }
 </script>
