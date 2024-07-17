@@ -8,13 +8,27 @@ import {
     withCtx,
     resolveDynamicComponent,
     createCommentVNode,
-    Fragment
+    Fragment,
+    normalizeClass
 } from "vue";
-import type { VNode } from "vue";
+import type { VNode, PropType } from "vue";
 import '../style/button.scss';
+import {BaseLoading} from '../../icons/loading';
+/**
+ * @description 按鈕元件
+ * type: 按鈕類型
+ * bg: 按鈕背景顏色
+ * loading: 是否顯示loading
+ * loadingAlign: loading位置
+ * loadingSpin: loading是否旋轉
+ * loadingIcon: loading圖示
+ * border: 是否有邊框
+ * disabled: 是否禁用
+ * 
+ */
 export default defineComponent({
     name: "NibuButton",
-    props: {
+    props: {       
         type: {
             type: String,
             default: "button"
@@ -27,6 +41,18 @@ export default defineComponent({
             type: Boolean,
             default: false
         },
+        loadingAlign: {
+            type: String as PropType<"prefix" | "suffix">,
+            default: "prefix"
+        },
+        loadingSpin: {
+            type: Boolean,
+            default: true
+        },
+        loadingIcon: {
+            type: Object,
+            default: () => BaseLoading
+        },
         border: {
             type: Boolean,
             default: false
@@ -34,35 +60,32 @@ export default defineComponent({
         disabled: {
             type: Boolean,
             default: false
-        },
+        },       
     },
     setup(__props, { attrs, expose, emit }) {
         return (_ctx: any): VNode => {
-            console.log(_ctx.loading)
             // 使用resolveDynamicComponent可幫我解析router-link
             return (openBlock(), createBlock(resolveDynamicComponent(_ctx.type), {
                 ...attrs,
-                class:[
+                class:normalizeClass([
+                    'nibu-button',
                     _ctx.border ? 'border' : 'no-border',
                     _ctx.disabled ? 'disabled' : '',
-                ],
+                ]),
                 disabled : _ctx.disabled,
             },
                 {
-                    default: withCtx(() => [
-                        
+                    default: withCtx(() => [                        
                             _ctx.loading ? 
                             (openBlock(), createElementBlock(
-                                "div",
-                                {},
+                                "i",
+                                {
+                                    style: {order: _ctx.loadingAlign === 'prefix' ? 0 : 1},                                    
+                                    class: normalizeClass(['nibu-button__loading',_ctx.loadingSpin ? 'spin' : ''])
+                                },
                                 [
                                     _ctx.$slots.loading ? renderSlot(_ctx.$slots, "loading") :
-                                    (openBlock(), createBlock("span", null, "loading..."))
-                                    // {
-                                    //     default: withCtx(() => [
-                                    //         (openBlock(), createBlock(resolveDynamicComponent(_ctx.loadingIcon)))
-                                    //     ])
-                                    // }
+                                    (openBlock(), createBlock(resolveDynamicComponent(_ctx.loadingIcon),null))
                                 ], 
                                 64 /* STABLE_FRAGMENT */))
                             : createCommentVNode("v-if", true),

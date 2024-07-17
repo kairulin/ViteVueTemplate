@@ -4,3 +4,41 @@
 .disabled {
     cursor: not-allowed;
 }
+.nibu-button {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / 1);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-width: 1px;
+    border-radius: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 32px;
+    display: inline-flex;
+    // background-color: rgb(220 38 38 / 1);
+    background-color: #FFACBB;
+    position: relative;
+    gap: 0.125rem;
+    box-sizing: border-box;
+
+    &__loading {
+        >svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

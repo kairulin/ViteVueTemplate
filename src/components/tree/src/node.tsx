@@ -29,7 +29,7 @@ export default defineComponent({
     },
     setup(__props, { attrs, expose, emit }) {
         const isOpen = ref(false);
-
+        console.log('TreeBranch', TreeBranch)
         const handleToggle = (event: Event) => {
             isOpen.value = (event.target as HTMLDetailsElement).open;
         }
