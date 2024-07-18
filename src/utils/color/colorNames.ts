@@ -1,11 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.names = void 0;
-// https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
-/**
- * @hidden
- */
-exports.names = {
+export const names = {
     aliceblue: '#f0f8ff',
     antiquewhite: '#faebd7',
     aqua: '#00ffff',
@@ -31,8 +24,8 @@ exports.names = {
     darkcyan: '#008b8b',
     darkgoldenrod: '#b8860b',
     darkgray: '#a9a9a9',
-    darkgreen: '#006400',
     darkgrey: '#a9a9a9',
+    darkgreen: '#006400',
     darkkhaki: '#bdb76b',
     darkmagenta: '#8b008b',
     darkolivegreen: '#556b2f',
@@ -60,9 +53,9 @@ exports.names = {
     goldenrod: '#daa520',
     gold: '#ffd700',
     gray: '#808080',
+    grey: '#808080',
     green: '#008000',
     greenyellow: '#adff2f',
-    grey: '#808080',
     honeydew: '#f0fff0',
     hotpink: '#ff69b4',
     indianred: '#cd5c5c',
@@ -78,8 +71,8 @@ exports.names = {
     lightcyan: '#e0ffff',
     lightgoldenrodyellow: '#fafad2',
     lightgray: '#d3d3d3',
-    lightgreen: '#90ee90',
     lightgrey: '#d3d3d3',
+    lightgreen: '#90ee90',
     lightpink: '#ffb6c1',
     lightsalmon: '#ffa07a',
     lightseagreen: '#20b2aa',
