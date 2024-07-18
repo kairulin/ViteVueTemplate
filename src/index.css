@@ -6,8 +6,38 @@
 :root{
     --background: white;
     --text-color: black;
+    /* --select-background: black; */
+    /* --select-text-color: white; */
+}
+
+/* @media (prefers-color-scheme: dark) { */
+    /* :root { */
+        /* --background: black; */
+        /* --text-color: white; */
+        /* --select-background: white; */
+        /* --select-text-color: black; */
+    /* } */
+/* } */
+html {
+    color-scheme: dark light;
+}
+:root:has(#theme [value="dark"]:checked) {
+    color-scheme:light;
+    --background: black;
+    --text-color: white;
+    --select-background: white;
+    --select-text-color: black;
+}
+:root:has(#theme [value="light"]:checked) {
+    color-scheme:dark;
+    --background: white;
+    --text-color: black;  
     --select-background: black;
     --select-text-color: white;
+}
+input,select {
+    font:inherit;
+    background-color: inherit;
 }
 /* @layer components {
     .slide-enter-active,

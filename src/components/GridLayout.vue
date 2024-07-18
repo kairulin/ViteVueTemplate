@@ -9,7 +9,7 @@
             <CustomNavigation />
         </aside>
         <main>
-            <select v-model="webStyle">
+            <select v-model="webStyle" data-theme-picker id="theme">
                 <option value="light">lightmode</option>
                 <option value="dark">darkmode</option>
             </select>
@@ -92,19 +92,19 @@ main {
     overflow: auto;
 
     /* padding: 20px; */
-    &:has(option[value="dark"]:checked) {
+    /* &:has(option[value="dark"]:checked) {
         --background: black;
-        --text-color: white;
-        --select-background: white;
-        --select-text-color: black;
+        --text-color: white; */
+        /* --select-background: white; */
+        /* --select-text-color: black; */
         /* select {
             color: initial !important;
         } */
-    }
+    /* } */
 }
 select {
-    background: var(--select-background);
-    color: var(--select-text-color);
+    /* background: var(--select-background);
+    color: var(--select-text-color); */
     width: max-content;
     border-radius: 5px;
     padding: 3px 5px;
