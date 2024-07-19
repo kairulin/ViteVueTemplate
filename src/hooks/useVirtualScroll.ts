@@ -42,14 +42,12 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: I
 
    // Computed properties
    const itemCount: Ref<number> = computed(() => items.length);
-  
    const startIndex: Ref<number> = computed(() => {
      let startNode =
        Math.floor(scrollTop.value / rowHeight.value) - nodePadding.value;
      startNode = Math.max(0, startNode);
      return startNode;
    });
-   
    const visibleNodeCount: Ref<number> = computed(() => {
      let count =
        Math.ceil(rootHeight.value / rowHeight.value) + 2 * nodePadding.value;
@@ -62,9 +60,7 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: I
       return items.slice(startIndex.value, startIndex.value + visibleNodeCount.value)
     }
    );
-   
    const offsetY: Ref<number> = computed(() => startIndex.value * rowHeight.value);
-   
    const spacerStyle: Ref<{ transform: string }> = computed(() => ({
      transform: `translateY(${offsetY.value}px)`
    }));

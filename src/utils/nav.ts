@@ -64,13 +64,13 @@ const navList = [
             {
                 name: "ColorMix",
                 path: "base",
-                nickname: "與黑白混",
+                nickname: "顏色和黑混、白混對照",
                 children: []
             },
             {
                 name: "ColorMix2",
                 path: "color-mix2",
-                nickname: "渲染函式按鈕",
+                nickname: "顏色互混對照",
                 children: []
             }            
         ]

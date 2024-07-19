@@ -21,19 +21,15 @@ const props = withDefaults(defineProps<{
 }>(),{
     data: () => []
 })
-console.log(props.data)
-const items: Ref<Item[]> = ref(props.data);
-// Reactive variables
-// const items: Ref<Item[]> = ref(new Array(100000)
-//     .fill(null)
-//     .map((_, index) => ({ text: `Item ${index + 1}` }))
-// )
+const items: Ref<Item[]> = ref(new Array(100000)
+    .fill(null)
+    .map((_, index) => ({ text: `Item ${index + 1}` }))
+)
 
 // Ref for the root element
 const root: Ref<HTMLElement | null> = ref(null);
 
 const { spacerStyle, handleScroll, visibleItems, rowHeight } = useVirtualScroll(root, props.data)
-console.log('visibleItems', visibleItems)
 </script>
 
 <style scoped>
