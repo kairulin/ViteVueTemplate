@@ -55,6 +55,14 @@ const navList = [
                 children: []
             }
         ]
+    },
+    {
+        name: "Color Mix",
+        path: "color-mix",
+        nickname: "顏色混合",
+        children: [          
+            
+        ]
     }
     // {
     //     name: "HOME",

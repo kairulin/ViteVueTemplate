@@ -1,0 +1,898 @@
+// https://www.ginifab.com.tw/tools/colors/html_color_names.html 
+interface Color {
+    name: string;
+    hex: string;
+    rgb: string;
+    hsl: string;
+}
+const colors: Record<string, Color> = {   
+    "aliceblue":{
+        "name":"愛麗絲藍",
+        "hex":"#f0f8ff",
+        "rgb":"rgb(240, 248, 255)",
+        "hsl":"hsl(208, 100%, 97%)"
+    },
+    "azure":{
+        "name":"湛藍色",
+        "hex":"#f0ffff",
+        "rgb":"rgb(240, 255, 255)",
+        "hsl":"hsl(180, 100%, 97%)"
+    },
+    "aqua":{
+        "name":"水色",
+        "hex":"#00ffff",
+        "rgb":"rgb(0, 255, 255)",
+        "hsl":"hsl(180, 100%, 50%)"
+    },
+    "aquamarine":{
+        "name":"碧藍色",
+        "hex":"#7fffd4",
+        "rgb":"rgb(127, 255, 212)",
+        "hsl":"hsl(160, 100%, 75%)"
+    },
+    "antiquewhite":{
+        "name":"古董白",
+        "hex":"#faebd7",
+        "rgb":"rgb(250, 235, 215)",
+        "hsl":"hsl(34, 78%, 91%)"
+    },
+    "black":{
+        "name":"黑色",
+        "hex":"#000000",
+        "rgb":"rgb(0, 0, 0)",
+        "hsl":"hsl(0, 0%, 0%)"
+    },
+    "brown":{
+        "name":"褐色",
+        "hex":"#a52a2a",
+        "rgb":"rgb(165, 42, 42)",
+        "hsl":"hsl(0, 59%, 41%)"
+    },		
+    "bisque":{
+        "name":"陶坯黃",
+        "hex":"#ffe4c4",
+        "rgb":"rgb(255, 228, 196)",
+        "hsl":"hsl(33, 100%, 88%)"
+    },
+    "burlywood":{
+        "name":"硬木色",
+        "hex":"#deb887",
+        "rgb":"rgb(222, 184, 135)",
+        "hsl":"hsl(34, 57%, 70%)"
+    },
+    "blanchedalmond":{
+        "name":"杏仁白",
+        "hex":"#ffebcd",
+        "rgb":"rgb(255, 235, 205)",
+        "hsl":"hsl(36, 100%, 90%)"
+    },
+    "beige":{
+        "name":"米色",
+        "hex":"#f5f5dc",
+        "rgb":"rgb(245, 245, 220)",
+        "hsl":"hsl(60, 56%, 91%)"
+    },
+    "blueviolet":{
+        "name":"藍紫色",
+        "hex":"#8a2be2",
+        "rgb":"rgb(138, 43, 226)",
+        "hsl":"hsl(271, 76%, 53%)"
+    },
+    "blue":{
+        "name":"藍色",
+        "hex":"#0000ff",
+        "rgb":"rgb(0, 0, 255)",
+        "hsl":"hsl(240, 100%, 50%)"
+    },
+    "chartreuse":{
+        "name":"查特酒綠",
+        "hex":"#7fff00",
+        "rgb":"rgb(127, 255, 0)",
+        "hsl":"hsl(90, 100%, 50%)"
+    },
+    "cadetblue":{
+        "name":"軍服藍",
+        "hex":"#5f9ea0",
+        "rgb":"rgb(95, 158, 160)",
+        "hsl":"hsl(182, 25%, 50%)"
+    },
+    "chocolate":{
+        "name":"巧克力色",
+        "hex":"#d2691e",
+        "rgb":"rgb(210, 105, 30)",
+        "hsl":"hsl(25, 75%, 47%)"
+    },
+    "coral":{
+        "name":"珊瑚紅",
+        "hex":"#ff7f50",
+        "rgb":"rgb(255, 127, 80)",
+        "hsl":"hsl(16, 100%, 66%)"
+    },
+    "cornflowerblue":{
+        "name":"矢車菊藍",
+        "hex":"#6495ed",
+        "rgb":"rgb(100, 149, 237)",
+        "hsl":"hsl(219, 79%, 66%)"
+    },
+    "cornsilk":{
+        "name":"玉米絲色",
+        "hex":"#fff8dc",
+        "rgb":"rgb(255, 248, 220)",
+        "hsl":"hsl(48, 100%, 93%)"
+    },
+    "crimson":{
+        "name":"緋紅色",
+        "hex":"#dc143c",
+        "rgb":"rgb(220, 20, 60)",
+        "hsl":"hsl(348, 83%, 47%)"
+    },
+    "cyan":{
+        "name":"青色",
+        "hex":"#00ffff",
+        "rgb":"rgb(0, 255, 255)",
+        "hsl":"hsl(180, 100%, 50%)"
+    },
+    "darkblue":{
+        "name":"深藍色",
+        "hex":"#00008b",
+        "rgb":"rgb(0, 0, 139)",
+        "hsl":"hsl(240, 100%, 27%)"
+    },
+    "darkcyan":{
+        "name":"暗青色",
+        "hex":"#008b8b",
+        "rgb":"rgb(0, 139, 139)",
+        "hsl":"hsl(180, 100%, 27%)"
+    },
+    "darkgoldenrod":{
+        "name":"暗金菊色",
+        "hex":"#b8860b",
+        "rgb":"rgb(184, 134, 11)",
+        "hsl":"hsl(43, 89%, 38%)"
+    },
+    "darkgray":{
+        "name":"暗灰",
+        "hex":"#a9a9a9",
+        "rgb":"rgb(169, 169, 169)",
+        "hsl":"hsl(0, 0%, 66%)"
+    },
+    "darkgrey":{
+        "name":"暗灰",
+        "hex":"#a9a9a9",
+        "rgb":"rgb(169, 169, 169)",
+        "hsl":"hsl(0, 0%, 66%)"
+    },
+    "darkgreen":{
+        "name":"暗綠色",
+        "hex":"#006400",
+        "rgb":"rgb(0, 100, 0)",
+        "hsl":"hsl(120, 100%, 20%)"
+    },
+    "darkkhaki":{
+        "name":"暗卡其色",
+        "hex":"#bdb76b",
+        "rgb":"rgb(189, 183, 107)",
+        "hsl":"hsl(56, 38%, 58%)"
+    },
+    "darkmagenta":{
+        "name":"暗洋紅",
+        "hex":"#8b008b",
+        "rgb":"rgb(139, 0, 139)",
+        "hsl":"hsl(300, 100%, 27%)"
+    },
+    "darkolivegreen":{
+        "name":"暗橄欖綠",
+        "hex":"#556b2f",
+        "rgb":"rgb(85, 107, 47)",
+        "hsl":"hsl(82, 39%, 30%)"
+    },
+    "darkorange":{
+        "name":"暗橙色",
+        "hex":"#ff8c00",
+        "rgb":"rgb(255, 140, 0)",
+        "hsl":"hsl(33, 100%, 50%)"
+    },
+    "darkorchid":{
+        "name":"暗蘭紫",
+        "hex":"#9932cc",
+        "rgb":"rgb(153, 50, 204)",
+        "hsl":"hsl(280, 61%, 50%)"
+    },
+    "darkred":{
+        "name":"暗紅",
+        "hex":"#8b0000",
+        "rgb":"rgb(139, 0, 0)",
+        "hsl":"hsl(0, 100%, 27%)"
+    },
+    "darksalmon":{
+        "name":"暗鮭紅",
+        "hex":"#e9967a",
+        "rgb":"rgb(233, 150, 122)",
+        "hsl":"hsl(15, 72%, 70%)"
+    },
+    "darkseagreen":{
+        "name":"暗海綠",
+        "hex":"#8fbc8f",
+        "rgb":"rgb(143, 188, 143)",
+        "hsl":"hsl(120, 25%, 65%)"
+    },
+    "darkslateblue":{
+        "name":"暗岩藍",
+        "hex":"#483d8b",
+        "rgb":"rgb(72, 61, 139)",
+        "hsl":"hsl(248, 39%, 39%)"
+    },
+    "darkslategray":{
+        "name":"暗岩灰",
+        "hex":"#2f4f4f",
+        "rgb":"rgb(47, 79, 79)",
+        "hsl":"hsl(180, 25%, 25%)"
+    },
+    "darkslategrey":{
+        "name":"暗岩灰",
+        "hex":"#2f4f4f",
+        "rgb":"rgb(47, 79, 79)",
+        "hsl":"hsl(180, 25%, 25%)"
+    },
+    "darkturquoise":{
+        "name":"暗綠松石色",
+        "hex":"#00ced1",
+        "rgb":"rgb(0, 206, 209)",
+        "hsl":"hsl(181, 100%, 41%)"
+    },
+    "darkviolet":{
+        "name":"暗紫色",
+        "hex":"#9400d3",
+        "rgb":"rgb(148, 0, 211)",
+        "hsl":"hsl(282, 100%, 41%)"
+    },
+    "deeppink":{
+        "name":"深粉紅",
+        "hex":"#ff1493",
+        "rgb":"rgb(255, 20, 147)",
+        "hsl":"hsl(328, 100%, 54%)"
+    },
+    "deepskyblue":{
+        "name":"深天藍色",
+        "hex":"#00bfff",
+        "rgb":"rgb(0, 191, 255)",
+        "hsl":"hsl(195, 100%, 50%)"
+    },
+    "dimgray":{
+        "name":"昏灰",
+        "hex":"#696969",
+        "rgb":"rgb(105, 105, 105)",
+        "hsl":"hsl(0, 0%, 41%)"
+    },
+    "dimgrey":{
+        "name":"昏灰",
+        "hex":"#696969",
+        "rgb":"rgb(105, 105, 105)",
+        "hsl":"hsl(0, 0%, 41%)"
+    },
+    "dodgerblue":{
+        "name":"道奇藍色",
+        "hex":"#1e90ff",
+        "rgb":"rgb(30, 144, 255)",
+        "hsl":"hsl(210, 100%, 56%)"
+    },
+    "firebrick":{
+        "name":"磚紅色",
+        "hex":"#b22222",
+        "rgb":"rgb(178, 34, 34)",
+        "hsl":"hsl(0, 68%, 42%)"
+    },
+    "floralwhite":{
+        "name":"花卉白",
+        "hex":"#fffaf0",
+        "rgb":"rgb(255, 250, 240)",
+        "hsl":"hsl(40, 100%, 97%)"
+    },
+    "forestgreen":{
+        "name":"森林綠",
+        "hex":"#228b22",
+        "rgb":"rgb(34, 139, 34)",
+        "hsl":"hsl(120, 61%, 34%)"
+    },
+    "fuchsia":{
+        "name":"品紅色",
+        "hex":"#ff00ff",
+        "rgb":"rgb(255, 0, 255)",
+        "hsl":"hsl(300, 100%, 50%)"
+    },
+    "gainsboro":{
+        "name":"庚斯博羅灰色",
+        "hex":"#dcdcdc",
+        "rgb":"rgb(220, 220, 220)",
+        "hsl":"hsl(0, 0%, 86%)"
+    },
+    "ghostwhite":{
+        "name":"幽靈白",
+        "hex":"#f8f8ff",
+        "rgb":"rgb(248, 248, 255)",
+        "hsl":"hsl(240, 100%, 99%)"
+    },
+    "goldenrod":{
+        "name":"金菊色",
+        "hex":"#daa520",
+        "rgb":"rgb(218, 165, 32)",
+        "hsl":"hsl(43, 74%, 49%)"
+    },
+    "gold":{
+        "name":"金色",
+        "hex":"#ffd700",
+        "rgb":"rgb(255, 215, 0)",
+        "hsl":"hsl(51, 100%, 50%)"
+    },
+    "gray":{
+        "name":"灰色",
+        "hex":"#808080",
+        "rgb":"rgb(128, 128, 128)",
+        "hsl":"hsl(0, 0%, 50%)"
+    },
+    "grey":{
+        "name":"灰色",
+        "hex":"#808080",
+        "rgb":"rgb(128, 128, 128)",
+        "hsl":"hsl(0, 0%, 50%)"
+    },
+    "green":{
+        "name":"綠色",
+        "hex":"#008000",
+        "rgb":"rgb(0, 128, 0)",
+        "hsl":"hsl(120, 100%, 25%)"
+    },
+    "greenyellow":{
+        "name":"綠黃",
+        "hex":"#adff2f",
+        "rgb":"rgb(173, 255, 47)",
+        "hsl":"hsl(84, 100%, 59%)"
+    },
+    "honeydew":{
+        "name":"蜜瓜綠",
+        "hex":"#f0fff0",
+        "rgb":"rgb(240, 255, 240)",
+        "hsl":"hsl(120, 100%, 97%)"
+    },
+    "hotpink":{
+        "name":"桃紅色",
+        "hex":"#ff69b4",
+        "rgb":"rgb(255, 105, 180)",
+        "hsl":"hsl(330, 100%, 71%)"
+    },
+    "indianred":{
+        "name":"印度紅",
+        "hex":"#cd5c5c",
+        "rgb":"rgb(205, 92, 92)",
+        "hsl":"hsl(0, 53%, 58%)"
+    },
+    "indigo":{
+        "name":"靛色",
+        "hex":"#4b0082",
+        "rgb":"rgb(75, 0, 130)",
+        "hsl":"hsl(275, 100%, 25%)"
+    },
+    "ivory":{
+        "name":"象牙色",
+        "hex":"#fffff0",
+        "rgb":"rgb(255, 255, 240)",
+        "hsl":"hsl(60, 100%, 97%)"
+    },
+    "khaki":{
+        "name":"卡其色",
+        "hex":"#f0e68c",
+        "rgb":"rgb(240, 230, 140)",
+        "hsl":"hsl(54, 77%, 75%)"
+    },
+    "lavenderblush":{
+        "name":"淡紫红",
+        "hex":"#fff0f5",
+        "rgb":"rgb(255, 240, 245)",
+        "hsl":"hsl(340, 100%, 97%)"
+    },
+    "lavender":{
+        "name":"薰衣草紫",
+        "hex":"#e6e6fa",
+        "rgb":"rgb(230, 230, 250)",
+        "hsl":"hsl(240, 67%, 94%)"
+    },
+    "lawngreen":{
+        "name":"草坪綠",
+        "hex":"#7cfc00",
+        "rgb":"rgb(124, 252, 0)",
+        "hsl":"hsl(90, 100%, 49%)"
+    },
+    "lemonchiffon":{
+        "name":"檸檬綢色",
+        "hex":"#fffacd",
+        "rgb":"rgb(255, 250, 205)",
+        "hsl":"hsl(54, 100%, 90%)"
+    },
+    "lightblue":{
+        "name":"亮藍",
+        "hex":"#add8e6",
+        "rgb":"rgb(173, 216, 230)",
+        "hsl":"hsl(195, 53%, 79%)"
+    },
+    "lightcoral":{
+        "name":"亮珊瑚色",
+        "hex":"#f08080",
+        "rgb":"rgb(240, 128, 128)",
+        "hsl":"hsl(0, 79%, 72%)"
+    },
+    "lightcyan":{
+        "name":"亮青",
+        "hex":"#e0ffff",
+        "rgb":"rgb(224, 255, 255)",
+        "hsl":"hsl(180, 100%, 94%)"
+    },
+    "lightgoldenrodyellow":{
+        "name":"亮金菊黃",
+        "hex":"#fafad2",
+        "rgb":"rgb(250, 250, 210)",
+        "hsl":"hsl(60, 80%, 90%)"
+    },
+    "lightgray":{
+        "name":"亮灰色",
+        "hex":"#d3d3d3",
+        "rgb":"rgb(211, 211, 211)",
+        "hsl":"hsl(0, 0%, 83%)"
+    },
+    "lightgrey":{
+        "name":"亮灰色",
+        "hex":"#d3d3d3",
+        "rgb":"rgb(211, 211, 211)",
+        "hsl":"hsl(0, 0%, 83%)"
+    },
+    "lightgreen":{
+        "name":"亮綠色",
+        "hex":"#90ee90",
+        "rgb":"rgb(144, 238, 144)",
+        "hsl":"hsl(120, 73%, 75%)"
+    },
+    "lightpink":{
+        "name":"亮粉紅色",
+        "hex":"#ffb6c1",
+        "rgb":"rgb(255, 182, 193)",
+        "hsl":"hsl(351, 100%, 86%)"
+    },
+    "lightsalmon":{
+        "name":"亮鮭紅",
+        "hex":"#ffa07a",
+        "rgb":"rgb(255, 160, 122)",
+        "hsl":"hsl(17, 100%, 74%)"
+    },
+    "lightseagreen":{
+        "name":"亮海綠",
+        "hex":"#20b2aa",
+        "rgb":"rgb(32, 178, 170)",
+        "hsl":"hsl(177, 70%, 41%)"
+    },
+    "lightskyblue":{
+        "name":"淺天藍",
+        "hex":"#87cefa",
+        "rgb":"rgb(135, 206, 250)",
+        "hsl":"hsl(203, 92%, 75%)"
+    },
+    "lightslategray":{
+        "name":"亮岩灰",
+        "hex":"#778899",
+        "rgb":"rgb(119, 136, 153)",
+        "hsl":"hsl(210, 14%, 53%)"
+    },
+    "lightslategrey":{
+        "name":"亮岩灰",
+        "hex":"#778899",
+        "rgb":"rgb(119, 136, 153)",
+        "hsl":"hsl(210, 14%, 53%)"
+    },
+    "lightsteelblue":{
+        "name":"亮鋼藍色",
+        "hex":"#b0c4de",
+        "rgb":"rgb(176, 196, 222)",
+        "hsl":"hsl(214, 41%, 78%)"
+    },
+    "lightyellow":{
+        "name":"亮黃",
+        "hex":"#ffffe0",
+        "rgb":"rgb(255, 255, 224)",
+        "hsl":"hsl(60, 100%, 94%)"
+    },
+    "lime":{
+        "name":"鮮綠色",
+        "hex":"#00ff00",
+        "rgb":"rgb(0, 255, 0)",
+        "hsl":"hsl(120, 100%, 50%)"
+    },
+    "limegreen":{
+        "name":"檸檬綠",
+        "hex":"#32cd32",
+        "rgb":"rgb(50, 205, 50)",
+        "hsl":"hsl(120, 61%, 50%)"
+    },
+    "linen":{
+        "name":"亞麻色",
+        "hex":"#faf0e6",
+        "rgb":"rgb(250, 240, 230)",
+        "hsl":"hsl(30, 67%, 94%)"
+    },
+    "magenta":{
+        "name":"洋紅色",
+        "hex":"#ff00ff",
+        "rgb":"rgb(255, 0, 255)",
+        "hsl":"hsl(300, 100%, 50%)"
+    },
+    "maroon": {
+        "name":"栗色",
+        "hex":"#800000",
+        "rgb":"rgb(128, 0, 0)",
+        "hsl":"hsl(0, 100%, 25%)"
+    },
+    "mediumaquamarine":{
+        "name":"中碧藍色",
+        "hex":"#66cdaa",
+        "rgb":"rgb(102, 205, 170)",
+        "hsl":"hsl(160, 51%, 60%)"
+    },
+    "mediumblue":{
+        "name":"中藍色",
+        "hex":"#0000cd",
+        "rgb":"rgb(0, 0, 205)",
+        "hsl":"hsl(240, 100%, 40%)"
+    },
+    "mediumorchid":{
+        "name":"中蘭紫",
+        "hex":"#ba55d3",
+        "rgb":"rgb(186, 85, 211)",
+        "hsl":"hsl(288, 59%, 58%)"
+    },
+    "mediumpurple":{
+        "name":"中紫色",
+        "hex":"#9370db",
+        "rgb":"rgb(147, 112, 219)",
+        "hsl":"hsl(260, 60%, 65%)"
+    },
+    "mediumseagreen":{
+        "name":"中海綠",
+        "hex":"#3cb371",
+        "rgb":"rgb(60, 179, 113)",
+        "hsl":"hsl(147, 50%, 47%)"
+    },
+    "mediumslateblue":{
+        "name":"中岩藍",
+        "hex":"#7b68ee",
+        "rgb":"rgb(123, 104, 238)",
+        "hsl":"hsl(249, 80%, 67%)"
+    },
+    "mediumspringgreen":{
+        "name":"中春綠色",
+        "hex":"#00fa9a",
+        "rgb":"rgb(0, 250, 154)",
+        "hsl":"hsl(157, 100%, 49%)"
+    },
+    "mediumturquoise":{
+        "name":"中綠松石色",
+        "hex":"#48d1cc",
+        "rgb":"rgb(72, 209, 204)",
+        "hsl":"hsl(178, 60%, 55%)"
+    },
+    "mediumvioletred":{
+        "name":"中紫紅",
+        "hex":"#c71585",
+        "rgb":"rgb(199, 21, 133)",
+        "hsl":"hsl(322, 81%, 43%)"
+    },
+    "midnightblue":{
+        "name":"午夜藍",
+        "hex":"#191970",
+        "rgb":"rgb(25, 25, 112)",
+        "hsl":"hsl(240, 64%, 27%)"
+    },
+    "mintcream":{
+        "name":"薄荷奶油色",
+        "hex":"#f5fffa",
+        "rgb":"rgb(245, 255, 250)",
+        "hsl":"hsl(150, 100%, 98%)"
+    },
+    "mistyrose":{
+        "name":"霧玫瑰色",
+        "hex":"#ffe4e1",
+        "rgb":"rgb(255, 228, 225)",
+        "hsl":"hsl(6, 100%, 94%)"
+    },
+    "moccasin":{
+        "name":"鹿皮鞋色",
+        "hex":"#ffe4b5",
+        "rgb":"rgb(255, 228, 181)",
+        "hsl":"hsl(38, 100%, 85%)"
+    },
+    "navajowhite":{
+        "name":"那瓦霍白",
+        "hex":"#ffdead",
+        "rgb":"rgb(255, 222, 173)",
+        "hsl":"hsl(36, 100%, 84%)"
+    },
+    "navy":{
+        "name":"藏青色",
+        "hex":"#000080",
+        "rgb":"rgb(0, 0, 128)",
+        "hsl":"hsl(240, 100%, 25%)"
+    },
+    "oldlace":{
+        "name":"舊蕾絲色",
+        "hex":"#fdf5e6",
+        "rgb":"rgb(253, 245, 230)",
+        "hsl":"hsl(39, 85%, 95%)"
+    },
+    "olive":{
+        "name":"橄欖色",
+        "hex":"#808000",
+        "rgb":"rgb(128, 128, 0)",
+        "hsl":"hsl(60, 100%, 25%)"
+    },
+    "olivedrab":{
+        "name":"橄欖綠",
+        "hex":"#6b8e23",
+        "rgb":"rgb(107, 142, 35)",
+        "hsl":"hsl(80, 60%, 35%)"
+    },
+    "orange":{
+        "name":"橙色/橘色",
+        "hex":"#ffa500",
+        "rgb":"rgb(255, 165, 0)",
+        "hsl":"hsl(39, 100%, 50%)"
+    },
+    "orangered":{
+        "name":"橙紅",
+        "hex":"#ff4500",
+        "rgb":"rgb(255, 69, 0)",
+        "hsl":"hsl(16, 100%, 50%)"
+    },
+    "orchid":{
+        "name":"蘭紫色",
+        "hex":"#da70d6",
+        "rgb":"rgb(218, 112, 214)",
+        "hsl":"hsl(302, 59%, 65%)"
+    },    
+    "palegoldenrod":{
+        "name":"灰金菊色",
+        "hex":"#eee8aa",
+        "rgb":"rgb(238, 232, 170)",
+        "hsl":"hsl(55, 67%, 80%)"
+    },
+    "palegreen":{
+        "name":"灰綠色",
+        "hex":"#98fb98",
+        "rgb":"rgb(152, 251, 152)",
+        "hsl":"hsl(120, 93%, 79%)"
+    },
+    "paleturquoise":{
+        "name":"灰綠松石色",
+        "hex":"#afeeee",
+        "rgb":"rgb(175, 238, 238)",
+        "hsl":"hsl(180, 65%, 81%)"
+    },
+    "palevioletred":{
+        "name":"灰紫紅",
+        "hex":"#db7093",
+        "rgb":"rgb(219, 112, 147)",
+        "hsl":"hsl(340, 60%, 65%)"
+    },
+    "papayawhip":{
+        "name":"蕃木瓜色",
+        "hex":"#ffefd5",
+        "rgb":"rgb(255, 239, 213)",
+        "hsl":"hsl(37, 100%, 92%)"
+    },
+    "peachpuff":{
+        "name":"粉撲桃色",
+        "hex":"#ffdab9",
+        "rgb":"rgb(255, 218, 185)",
+        "hsl":"hsl(28, 100%, 86%)"
+    },
+    "peru":{
+        "name":"秘魯色",
+        "hex":"#cd853f",
+        "rgb":"rgb(205, 133, 63)",
+        "hsl":"hsl(30, 59%, 53%)"
+    },
+    "pink":{
+        "name":"粉紅色",
+        "hex":"#ffc0cb",
+        "rgb":"rgb(255, 192, 203)",
+        "hsl":"hsl(350, 100%, 88%)"
+    },
+    "plum":{
+        "name":"梅紅色",
+        "hex":"#dda0dd",
+        "rgb":"rgb(221, 160, 221)",
+        "hsl":"hsl(300, 47%, 75%)"
+    },
+    "powderblue":{
+        "name":"粉藍色",
+        "hex":"#b0e0e6",
+        "rgb":"rgb(176, 224, 230)",
+        "hsl":"hsl(187, 52%, 80%)"
+    },
+    "purple":{
+        "name":"紫色",
+        "hex":"#800080",
+        "rgb":"rgb(128, 0, 128)",
+        "hsl":"hsl(300, 100%, 25%)"
+    },
+    "rebeccapurple":{
+        "name":"麗貝卡紫",
+        "hex":"#663399",
+        "rgb":"rgb(102, 51, 153)",
+        "hsl":"hsl(270, 50%, 40%)"
+    },
+    "red":{
+        "name":"紅色",
+        "hex":"#ff0000",
+        "rgb":"rgb(255, 0, 0)",
+        "hsl":"hsl(0, 100%, 50%)"
+    },
+    "rosybrown":{
+        "name":"玫瑰褐",
+        "hex":"#bc8f8f",
+        "rgb":"rgb(188, 143, 143)",
+        "hsl":"hsl(0, 25%, 65%)"
+    },
+    "royalblue":{
+        "name":"寶藍色",
+        "hex":"#4169e1",
+        "rgb":"rgb(65, 105, 225)",
+        "hsl":"hsl(225, 73%, 57%)"
+    },
+    "saddlebrown":{
+        "name":"馬鞍棕色",
+        "hex":"#8b4513",
+        "rgb":"rgb(139, 69, 19)",
+        "hsl":"hsl(25, 76%, 31%)"
+    },
+    "salmon":{
+        "name":"鮭紅",
+        "hex":"#fa8072",
+        "rgb":"rgb(250, 128, 114)",
+        "hsl":"hsl(6, 93%, 71%)"
+    },
+    "sandybrown":{
+        "name":"沙棕黃",
+        "hex":"#f4a460",
+        "rgb":"rgb(244, 164, 96)",
+        "hsl":"hsl(28, 87%, 67%)"
+    },
+    "seagreen":{
+        "name":"海綠色",
+        "hex":"#2e8b57",
+        "rgb":"rgb(46, 139, 87)",
+        "hsl":"hsl(146, 50%, 36%)"
+    },
+    "seashell":{
+        "name":"海貝色",
+        "hex":"#fff5ee",
+        "rgb":"rgb(255, 245, 238)",
+        "hsl":"hsl(25, 100%, 97%)"
+    },
+    "sienna":{
+        "name":"赭黃",
+        "hex":"#a0522d",
+        "rgb":"rgb(160, 82, 45)",
+        "hsl":"hsl(19, 56%, 40%)"
+    },
+    "silver":{
+        "name":"銀色",
+        "hex":"#c0c0c0",
+        "rgb":"rgb(192, 192, 192)",
+        "hsl":"hsl(0, 0%, 75%)"
+    },
+    "skyblue":{
+        "name":"天空藍",
+        "hex":"#87ceeb",
+        "rgb":"rgb(135, 206, 235)",
+        "hsl":"hsl(197, 71%, 73%)"
+    },
+    "slateblue":{
+        "name":"岩藍",
+        "hex":"#6a5acd",
+        "rgb":"rgb(106, 90, 205)",
+        "hsl":"hsl(248, 53%, 58%)"
+    },
+    "slategray":{
+        "name":"岩灰色",
+        "hex":"#708090",
+        "rgb":"rgb(112, 128, 144)",
+        "hsl":"hsl(210, 13%, 50%)"
+    },
+    "slategrey":{
+        "name":"岩灰色",
+        "hex":"#708090",
+        "rgb":"rgb(112, 128, 144)",
+        "hsl":"hsl(210, 13%, 50%)"
+    },
+    "snow":{
+        "name":"雪色",
+        "hex":"#fffafa",
+        "rgb":"rgb(255, 250, 250)",
+        "hsl":"hsl(0, 100%, 99%)"
+    },
+    "springgreen":{
+        "name":"春綠色",
+        "hex":"#00ff7f",
+        "rgb":"rgb(0, 255, 127)",
+        "hsl":"hsl(150, 100%, 50%)"
+    },
+    "steelblue":{
+        "name":"鋼青色",
+        "hex":"#4682b4",
+        "rgb":"rgb(70, 130, 180)",
+        "hsl":"hsl(207, 44%, 49%)"
+    },
+    "tan":{
+        "name":"日曬色",
+        "hex":"#d2b48c",
+        "rgb":"rgb(210, 180, 140)",
+        "hsl":"hsl(34, 44%, 69%)"
+    },
+    "teal":{
+        "name":"藍綠色",
+        "hex":"#008080",
+        "rgb":"rgb(0, 128, 128)",
+        "hsl":"hsl(180, 100%, 25%)"
+    },
+    "thistle":{
+        "name":"薊紫色",
+        "hex":"#d8bfd8",
+        "rgb":"rgb(216, 191, 216)",
+        "hsl":"hsl(300, 24%, 80%)"
+    },
+    "tomato":{
+        "name":"蕃茄紅",
+        "hex":"#ff6347",
+        "rgb":"rgb(255, 99, 71)",
+        "hsl":"hsl(9, 100%, 64%)"
+    },
+    "turquoise":{
+        "name":"綠松石色",
+        "hex":"#40e0d0",
+        "rgb":"rgb(64, 224, 208)",
+        "hsl":"hsl(174, 72%, 56%)"
+    },
+    "violet":{
+        "name":"紫羅蘭色",
+        "hex":"#ee82ee",
+        "rgb":"rgb(238, 130, 238)",
+        "hsl":"hsl(300, 76%, 72%)"
+    },
+    "wheat":{
+        "name":"小麥色",
+        "hex":"#f5deb3",
+        "rgb":"rgb(245, 222, 179)",
+        "hsl":"hsl(39, 77%, 83%)"
+    },
+    "whitesmoke":{
+        "name":"白煙色",
+        "hex":"#f5f5f5",
+        "rgb":"rgb(245, 245, 245)",
+        "hsl":"hsl(0, 0%, 96%)"
+    },
+    "white":{
+        "name":"白色",
+        "hex":"#ffffff",
+        "rgb":"rgb(255, 255, 255)",
+        "hsl":"hsl(0, 0%, 100%)"
+    },
+    "yellow":{
+        "name":"黃色",
+        "hex":"#ffff00",
+        "rgb":"rgb(255, 255, 0)",
+        "hsl":"hsl(60, 100%, 50%)"
+    },
+    "yellowgreen":{
+        "name":"黃綠",
+        "hex":"#9acd32",
+        "rgb":"rgb(154, 205, 50)",
+        "hsl":"hsl(80, 61%, 50%)"
+    }
+}
+export default colors;
