@@ -10,7 +10,7 @@ interface Item {
  * @param items 傳入的陣列
  * @returns 
  */
-export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: Item[]) {
+export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: any[]) {
       // Define a mixin object (if needed)
   const passiveSupportMixin = {
     methods: {
@@ -55,7 +55,7 @@ export default function useVirtualScroll(root: Ref<HTMLElement | null>, items: I
      return count;
    });
    
-   const visibleItems: Ref<Item[]> = computed(() => {
+   const visibleItems: Ref<any[]> = computed(() => {
      if(!items || items.length === 0) return [];
       return items.slice(startIndex.value, startIndex.value + visibleNodeCount.value)
     }

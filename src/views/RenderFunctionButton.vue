@@ -1,6 +1,6 @@
 <template>
     <!-- class="inline-flex items-center justify-center text-sm rounded min-h-[32px] px-3 py-0.5 font-semibold bg-red-600 text-white hover:bg-red-500" -->
-    <NibuButton border disabled loading>
+    <NibuButton border loading disabled>
         <!-- <template #loading>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path fill="currentColor"

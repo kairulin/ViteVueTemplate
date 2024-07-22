@@ -9,6 +9,10 @@
     /* --select-background: black; */
     /* --select-text-color: white; */
     --blue-color: blue;
+    --nibu-button-color: #FFACBB;
+    --nibu-button-hover-color: color-mix(in srgb, #FFACBB 90%, white);
+    --nibu-button-active-color: color-mix(in srgb, #FFACBB 90%, black);;
+    --nibu-button-disabled-color: color-mix(in srgb, #FFACBB 80%, white);;
 }
 
 /* @media (prefers-color-scheme: dark) { */

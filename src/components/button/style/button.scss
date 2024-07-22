@@ -21,7 +21,7 @@
     min-height: 32px;
     display: inline-flex;
     // background-color: rgb(220 38 38 / 1);
-    background-color: #FFACBB;
+    background-color: var(--nibu-button-color);
     position: relative;
     gap: 0.125rem;
     box-sizing: border-box;
@@ -31,6 +31,16 @@
             width: 1.25rem;
             height: 1.25rem;
         }
+    }
+    &:hover{
+        background-color: var(--nibu-button-hover-color);
+    }
+    &:active {
+        background-color: var(--nibu-button-active-color);
+    }
+    &:disabled {
+        background-color: var(--nibu-button-disabled-color);
+
     }
 }
 
