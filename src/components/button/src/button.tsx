@@ -87,6 +87,9 @@ export default defineComponent({
         return (_ctx: any): VNode => {
             const buttonStyle = useButtonStyle(__props);
         
+            const onClick = (e: MouseEvent) => {
+               
+            }
             // 使用resolveDynamicComponent可幫解析router-link
             return (openBlock(), createBlock(resolveDynamicComponent(_ctx.type), {
                 ...attrs,
@@ -95,7 +98,8 @@ export default defineComponent({
                     _ctx.border ? 'border' : 'no-border',
                 ]),
                 disabled: _ctx.disabled,
-                style:buttonStyle
+                style:buttonStyle,
+                onClick: onClick
             },
                 {
                     default: withCtx(() => [

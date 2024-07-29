@@ -33,9 +33,11 @@
     }
     &:hover{
         background-color: var(--nibu-button-hover-color);
+        color: var(--nibu-button-text-hover-color)
     }
     &:active {
         background-color: var(--nibu-button-active-color);
+        color:var(--nibu-button-text-active-color)
     }
     &:disabled {
         background-color: var(--nibu-button-disabled-color);
