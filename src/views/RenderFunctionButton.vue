@@ -1,6 +1,6 @@
 <template>
     <!-- class="inline-flex items-center justify-center text-sm rounded min-h-[32px] px-3 py-0.5 font-semibold bg-red-600 text-white hover:bg-red-500" -->
-    <NibuButton border loading disabled>
+    <NibuButton loading disabled loading-align="right" >
         <!-- <template #loading>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path fill="currentColor"
@@ -8,7 +8,14 @@
                 </path>
             </svg>
         </template> -->
+        <template #rightIcon>
+            右邊符號
+        </template>
+        <template #leftIcon>
+            左邊符號
+        </template>
         自訂文字
+
     </NibuButton>
 </template>
 <script setup lang="ts">
