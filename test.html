@@ -5,18 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body:has(option[value="dark"]:checked) {
             --background: black;
             --text-color: blue;
         }
+        .test {   
+            display: inline-block;   
+            /* box-sizing: border-box; */
+        }
+        .test svg {
+            width: 1rem;
+            vertical-align: text-bottom;
+        }
     </style>
 </head>
 <body>
-    <select>
+    <!-- <select>
         <option value="light">lightmode</option>
         <option value="dark">darkmode</option>
     </select>
-    test
+    test -->
+    <div>
+        <span class="test">
+            <div>
+                <i class="glyphicon glyphicon-cloud"></i>
+                <div>
+                    測試文字
+                </div>
+            </div>
+        </span>
+        <span class="test">
+            <div>
+
+                <div>
+                    測試文字
+                </div>
+                <i class="glyphicon glyphicon-cloud"></i>
+            </div>
+        </span>
+    </div>
 </body>
 </html>
