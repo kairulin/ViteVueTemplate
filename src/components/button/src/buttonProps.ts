@@ -14,7 +14,9 @@ import { BaseLoading } from '../../icons/loading';
  * text: 是否為純文字按鈕
  * round: 是否為圓角按鈕
  * circle: 是否為圓形按鈕
- * 
+ * large: 是否為大按鈕
+ * middle: 是否為中按鈕
+ * small: 是否為小按鈕
  */
 export const buttonProps = () => ({
     type: {
@@ -64,5 +66,8 @@ export const buttonProps = () => ({
     circle: {
         type: Boolean,
         default: false
-    }
+    },
+    large: Boolean,
+    middle: Boolean,
+    small: Boolean,
 })

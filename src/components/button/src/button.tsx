@@ -11,11 +11,14 @@ import {
     normalizeClass,
     Transition,
     createVNode,
-    nextTick
+    nextTick,
+    inject,
+    computed
 } from "vue";
 import type { VNode, PropType } from "vue";
 import '../style/button.scss';
 import useButtonStyle from "./composables/useButtonStyle";
+import useButtonSize from "./composables/useButtonSize";
 import { buttonProps } from './buttonProps'
 
 const getCollapsedWidth = (el: HTMLElement) => {
@@ -58,7 +61,8 @@ export default defineComponent({
     setup(__props, { attrs, expose, emit }) {
         return (_ctx: any): VNode => {
             const buttonStyle = useButtonStyle(__props);
-
+            const size = computed(() => __props.large ? "large" : __props.small ? "small" : __props.middle ? "middle" : null);
+            const { _size } = useButtonSize(size.value);
             const onClick = (e: MouseEvent) => {
 
             }
@@ -68,6 +72,7 @@ export default defineComponent({
                 class: normalizeClass([
                     'nibu-button',
                     _ctx.border ? 'border' : 'no-border',
+                    _size,
                 ]),
                 id: "nibu-button",
                 disabled: _ctx.disabled,
@@ -80,8 +85,8 @@ export default defineComponent({
                             createVNode(Transition,
                                 {
                                     name: "nibu-transition",
-                                    "onBeforeEnter": (!_ctx.$slots.leftIcon && !_ctx.$slots.rightIcon) && getCollapsedWidth,
-                                    "onEnter": getRealWidth,                                   
+                                    "onBeforeEnter": (!_ctx.$slots.leftIcon && !_ctx.$slots.rightIcon) ? getCollapsedWidth : () => { },
+                                    "onEnter": getRealWidth,
                                     "onBeforeLeave": (!_ctx.$slots.leftIcon && !_ctx.$slots.rightIcon) ? resetStyle : resetStyle2,
                                 },
                                 {

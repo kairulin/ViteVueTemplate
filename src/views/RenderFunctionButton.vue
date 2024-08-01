@@ -1,4 +1,5 @@
 <template>
+    <h1>預設</h1>
     <div>
         <NibuButton>
             預設背景
@@ -14,20 +15,6 @@
         </NibuButton>
     </div>
     <div>
-        <NibuButton text>
-            預設背景
-        </NibuButton>
-        <NibuButton bg="red" text>
-            紅色背景
-        </NibuButton>
-        <NibuButton bg="blue" text>
-            藍色背景
-        </NibuButton>
-        <NibuButton bg="green" text>
-            綠色背景
-        </NibuButton>
-    </div>
-    <div>
         <NibuButton>
             <template #leftIcon>
                 <EnvelopeIcon />
@@ -39,20 +26,6 @@
                 <EnvelopeIcon />
             </template>
             預設背景
-        </NibuButton>
-    </div>
-    <div>
-        <NibuButton text>
-            <template #leftIcon>
-                <EnvelopeIcon />
-            </template>
-            純文字
-        </NibuButton>
-        <NibuButton text>
-            <template #rightIcon>
-                <EnvelopeIcon />
-            </template>
-            純文字
         </NibuButton>
     </div>
     <div>
@@ -64,11 +37,20 @@
         </NibuButton>
     </div>
     <div>
-        <NibuButton loading text loading-align="left">
-            純文字
+        <NibuButton disabled>
+            禁用狀態
         </NibuButton>
-        <NibuButton loading text loading-align="right">
-            純文字
+        <NibuButton disabled>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            禁用狀態
+        </NibuButton>
+        <NibuButton disabled>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            禁用狀態
         </NibuButton>
     </div>
     <div>
@@ -76,17 +58,6 @@
             點擊載入(左)
         </NibuButton>
         <NibuButton :loading="loading[1]" loading-align="left" @click="enterLoading(1)">
-            <template #leftIcon>
-                <EnvelopeIcon />
-            </template>
-            點擊載入(左)
-        </NibuButton>
-    </div>
-    <div>
-        <NibuButton :loading="loading[4]" loading-align="left" @click="enterLoading(4)" text>
-            點擊載入(左)
-        </NibuButton>
-        <NibuButton :loading="loading[5]" loading-align="left" @click="enterLoading(5)" text>
             <template #leftIcon>
                 <EnvelopeIcon />
             </template>
@@ -105,51 +76,6 @@
         </NibuButton>
     </div>
     <div>
-        <NibuButton :loading="loading[6]" loading-align="right" @click="enterLoading(6)" text>
-            點擊載入(右)
-        </NibuButton>
-        <NibuButton :loading="loading[7]" loading-align="right" @click="enterLoading(7)" text>
-            <template #rightIcon>
-                <EnvelopeIcon />
-            </template>
-            點擊載入(右)
-        </NibuButton>
-    </div>
-    <div>
-        <NibuButton disabled>
-            禁用狀態
-        </NibuButton>
-        <NibuButton disabled>
-            <template #leftIcon>
-                <EnvelopeIcon />
-            </template>
-            禁用狀態
-        </NibuButton>
-        <NibuButton disabled>
-            <template #rightIcon>
-                <EnvelopeIcon />
-            </template>
-            禁用狀態
-        </NibuButton>
-    </div>
-    <div>
-        <NibuButton disabled text>
-            禁用狀態
-        </NibuButton>
-        <NibuButton disabled text>
-            <template #leftIcon>
-                <EnvelopeIcon />
-            </template>
-            禁用狀態
-        </NibuButton>
-        <NibuButton disabled text>
-            <template #rightIcon>
-                <EnvelopeIcon />
-            </template>
-            禁用狀態
-        </NibuButton>
-    </div>
-    <div>
         <NibuButton :loading="loading[8]" loading-align="left" @click="enterLoading(8)">
             <template #leftIcon>
                 <EnvelopeIcon />
@@ -163,6 +89,73 @@
             <template #leftIcon>
                 <EnvelopeIcon />
             </template>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(右)
+        </NibuButton>
+    </div>
+    <h1>純文字</h1>
+    <div>
+        <NibuButton text>
+            預設背景
+        </NibuButton>
+        <NibuButton bg="red" text>
+            紅色背景
+        </NibuButton>
+        <NibuButton bg="blue" text>
+            藍色背景
+        </NibuButton>
+        <NibuButton bg="green" text>
+            綠色背景
+        </NibuButton>
+    </div>
+
+    <div>
+        <NibuButton text>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            預設背景
+        </NibuButton>
+        <NibuButton text>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            預設背景
+        </NibuButton>
+    </div>
+
+    <div>
+        <NibuButton loading text loading-align="left">
+            載入狀態
+        </NibuButton>
+        <NibuButton loading text loading-align="right">
+            載入狀態
+        </NibuButton>
+    </div>
+    <div>
+        <NibuButton disabled text>
+            禁用狀態
+        </NibuButton>
+        <NibuButton disabled text>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            禁用狀態
+        </NibuButton>
+        <NibuButton disabled text>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            禁用狀態
+        </NibuButton>
+    </div>
+    <div>
+        <NibuButton :loading="loading[6]" loading-align="right" @click="enterLoading(6)" text>
+            點擊載入(右)
+        </NibuButton>
+        <NibuButton :loading="loading[7]" loading-align="right" @click="enterLoading(7)" text>
             <template #rightIcon>
                 <EnvelopeIcon />
             </template>
@@ -189,9 +182,109 @@
             點擊載入(右)
         </NibuButton>
     </div>
+    <h1>群組</h1>
+    <div>
+        <NibuButtonGroup large>
+            <NibuButton>
+                預設背景
+            </NibuButton>
+            <NibuButton bg="red">
+                紅色背景
+            </NibuButton>
+            <NibuButton bg="blue">
+                藍色背景
+            </NibuButton>
+            <NibuButton bg="green">
+                綠色背景
+            </NibuButton>
+        </NibuButtonGroup>
+    </div>
+    <div>
+        <NibuButtonGroup>
+            <NibuButton>
+                預設背景
+            </NibuButton>
+            <NibuButton bg="red">
+                紅色背景
+            </NibuButton>
+            <NibuButton bg="blue">
+                藍色背景
+            </NibuButton>
+            <NibuButton bg="green">
+                綠色背景
+            </NibuButton>
+        </NibuButtonGroup>
+    </div>
+    <div>
+        <NibuButtonGroup small>
+            <NibuButton>
+                預設背景
+            </NibuButton>
+            <NibuButton bg="red">
+                紅色背景
+            </NibuButton>
+            <NibuButton bg="blue">
+                藍色背景
+            </NibuButton>
+            <NibuButton bg="green">
+                綠色背景
+            </NibuButton>
+        </NibuButtonGroup>
+    </div>
+    <div class="group">
+        <div>
+            <NibuButtonGroup large vertical>
+                <NibuButton>
+                    預設背景
+                </NibuButton>
+                <NibuButton bg="red">
+                    紅色背景
+                </NibuButton>
+                <NibuButton bg="blue">
+                    藍色背景
+                </NibuButton>
+                <NibuButton bg="green">
+                    綠色背景
+                </NibuButton>
+            </NibuButtonGroup>
+        </div>
+        <div>
+            <NibuButtonGroup vertical>
+                <NibuButton>
+                    預設背景
+                </NibuButton>
+                <NibuButton bg="red">
+                    紅色背景
+                </NibuButton>
+                <NibuButton bg="blue">
+                    藍色背景
+                </NibuButton>
+                <NibuButton bg="green">
+                    綠色背景
+                </NibuButton>
+            </NibuButtonGroup>
+        </div>
+        <div>
+            <NibuButtonGroup small vertical>
+                <NibuButton>
+                    預設背景
+                </NibuButton>
+                <NibuButton bg="red">
+                    紅色背景
+                </NibuButton>
+                <NibuButton bg="blue">
+                    藍色背景
+                </NibuButton>
+                <NibuButton bg="green">
+                    綠色背景
+                </NibuButton>
+            </NibuButtonGroup>
+        </div>
+    </div>
 </template>
 <script setup lang="ts">
 import NibuButton from '@/components/button';
+import { NibuButtonGroup } from '@/components/button';
 import { ref } from 'vue';
 import { BaseLoading } from '@/components/icons/loading'
 import { EnvelopeIcon } from '@heroicons/vue/20/solid';
@@ -204,4 +297,8 @@ const enterLoading = (idx: number) => {
 }
 
 </script>
-<style scoped></style>
+<style scoped>
+.group {
+    display: flex;
+}
+</style>

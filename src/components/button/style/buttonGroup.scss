@@ -1,0 +1,8 @@
+.nibu-button-group {
+    display: inline-block;
+    vertical-align: top;   
+    &__vertical {
+        display: inline-grid;    
+        justify-items: start;  
+    }
+}

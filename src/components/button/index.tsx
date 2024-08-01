@@ -1,3 +1,4 @@
 import NibuButton from './src/button';
+import NibuButtonGroup from './src/buttonGroup';
 
-export default NibuButton;
+export {NibuButtonGroup, NibuButton as default};
