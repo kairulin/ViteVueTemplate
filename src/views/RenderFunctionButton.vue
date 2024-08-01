@@ -12,6 +12,8 @@
         <NibuButton bg="green">
             綠色背景
         </NibuButton>
+    </div>
+    <div>
         <NibuButton text>
             預設背景
         </NibuButton>
@@ -38,6 +40,8 @@
             </template>
             預設背景
         </NibuButton>
+    </div>
+    <div>
         <NibuButton text>
             <template #leftIcon>
                 <EnvelopeIcon />
@@ -58,6 +62,8 @@
         <NibuButton loading loading-align="right">
             載入狀態
         </NibuButton>
+    </div>
+    <div>
         <NibuButton loading text loading-align="left">
             純文字
         </NibuButton>
@@ -75,10 +81,34 @@
             </template>
             點擊載入(左)
         </NibuButton>
+    </div>
+    <div>
+        <NibuButton :loading="loading[4]" loading-align="left" @click="enterLoading(4)" text>
+            點擊載入(左)
+        </NibuButton>
+        <NibuButton :loading="loading[5]" loading-align="left" @click="enterLoading(5)" text>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(左)
+        </NibuButton>
+    </div>
+    <div>
         <NibuButton :loading="loading[2]" loading-align="right" @click="enterLoading(2)">
             點擊載入(右)
         </NibuButton>
         <NibuButton :loading="loading[3]" loading-align="right" @click="enterLoading(3)">
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(右)
+        </NibuButton>
+    </div>
+    <div>
+        <NibuButton :loading="loading[6]" loading-align="right" @click="enterLoading(6)" text>
+            點擊載入(右)
+        </NibuButton>
+        <NibuButton :loading="loading[7]" loading-align="right" @click="enterLoading(7)" text>
             <template #rightIcon>
                 <EnvelopeIcon />
             </template>
@@ -101,6 +131,8 @@
             </template>
             禁用狀態
         </NibuButton>
+    </div>
+    <div>
         <NibuButton disabled text>
             禁用狀態
         </NibuButton>
@@ -117,13 +149,53 @@
             禁用狀態
         </NibuButton>
     </div>
+    <div>
+        <NibuButton :loading="loading[8]" loading-align="left" @click="enterLoading(8)">
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(左)
+        </NibuButton>
+        <NibuButton :loading="loading[9]" loading-align="right" @click="enterLoading(9)">
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(右)
+        </NibuButton>
+    </div>
+    <div>
+        <NibuButton :loading="loading[10]" loading-align="left" @click="enterLoading(10)" text>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(左)
+        </NibuButton>
+        <NibuButton :loading="loading[11]" loading-align="right" @click="enterLoading(11)" text>
+            <template #leftIcon>
+                <EnvelopeIcon />
+            </template>
+            <template #rightIcon>
+                <EnvelopeIcon />
+            </template>
+            點擊載入(右)
+        </NibuButton>
+    </div>
 </template>
 <script setup lang="ts">
 import NibuButton from '@/components/button';
 import { ref } from 'vue';
 import { BaseLoading } from '@/components/icons/loading'
 import { EnvelopeIcon } from '@heroicons/vue/20/solid';
-const loading = ref([false, false, false, false])
+const loading = ref([false, false, false, false, false, false, false, false, false, false, false, false])
 const enterLoading = (idx: number) => {
     loading.value[idx] = true
     setTimeout(() => {
@@ -132,30 +204,4 @@ const enterLoading = (idx: number) => {
 }
 
 </script>
-<style scoped>
-.test {
-    /* --tw-text-opacity: 1; */
-    color: var(--nibu-button-text-color);
-    background-color: red;
-    font-weight: 600;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    border-width: 1px;
-    border-radius: var(--nibu-button-border-radius);
-    justify-content: center;
-    align-items: center;
-    min-height: 2rem;
-    display: inline-flex;
-    background-color: var(--nibu-button-color);
-    position: relative;
-    gap: 0.125rem;
-    box-sizing: border-box;
-    vertical-align: middle;
-    /* width: var(--nibu-button-width);
-    height: var(--nibu-button-height); */
-}
-</style>
+<style scoped></style>

@@ -7,6 +7,7 @@ export default function useButtonStyle (props:any) {
     styles["--nibu-button-color"] = props.bg;
     styles["--nibu-button-hover-color"] = `color-mix(in srgb, ${props.bg} 80%, white)`;
     styles["--nibu-button-active-color"] = `color-mix(in srgb, ${props.bg} 80%, black)`;
+    styles["--nibu-button-opacity"] = "1";
     // 如果按鈕為純文字，則按鈕背景色為無、文字色為背景色
     if(props.text) {
         styles["--nibu-button-text-color"] = props.bg;
@@ -32,6 +33,7 @@ export default function useButtonStyle (props:any) {
     // 如果按鈕為disabled或loading狀態，則按鈕滑入、按下的效果為無
     if(props.disabled || props.loading) {
         styles["cursor"] = "not-allowed";
+        styles["--nibu-button-opacity"] = "0.7";
     }
     // 如果是純文字按鈕，且disabled或loading狀態，則按鈕滑入、按下的文字色為混合色
     if((props.disabled || props.loading) && props.text) {
