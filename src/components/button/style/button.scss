@@ -61,7 +61,7 @@
         cursor: not-allowed;
         color:var(--nibu-button-text-color);
     }
-    >svg {
+    >.nibu-left-icon,>.nibu-right-icon {
         width: 1.25rem;
         height: 1.25rem;
     }

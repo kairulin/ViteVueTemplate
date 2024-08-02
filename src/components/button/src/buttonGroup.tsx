@@ -6,8 +6,7 @@ export default defineComponent({
     name: "NibuButtonGroup",
     props: buttonGroupdProps(),
     setup(__props, { attrs, expose, emit }) {
-        const size = computed(() => __props.large ? "large" : __props.small ? "small" : __props.middle ? "middle" : null);
-        const { _size } = useButtonSize(size.value);
+        const { _size } = useButtonSize(__props);
         provide("size", _size);
         return (_ctx: any) => {
             return openBlock(), createBlock("div",

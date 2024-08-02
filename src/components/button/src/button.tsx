@@ -13,7 +13,8 @@ import {
     createVNode,
     nextTick,
     inject,
-    computed
+    computed,
+    createElementVNode
 } from "vue";
 import type { VNode, PropType } from "vue";
 import '../style/button.scss';
@@ -61,8 +62,7 @@ export default defineComponent({
     setup(__props, { attrs, expose, emit }) {
         return (_ctx: any): VNode => {
             const buttonStyle = useButtonStyle(__props);
-            const size = computed(() => __props.large ? "large" : __props.small ? "small" : __props.middle ? "middle" : null);
-            const { _size } = useButtonSize(size.value);
+            const { _size } = useButtonSize(__props);
             const onClick = (e: MouseEvent) => {
 
             }
@@ -102,21 +102,10 @@ export default defineComponent({
                                     ]
                                 }
                             )
-                        ),
-                        // _ctx.loading ?
-                        //     (openBlock(), createElementBlock(
-                        //         "i",
-                        //         {
-                        //             style: { order: _ctx.loadingAlign === 'left' ? 0 : 1 },
-                        //             class: normalizeClass(['nibu-button__loading', _ctx.loadingSpin ? 'spin' : ''])
-                        //         },
-                        //         [
-                        //             _ctx.$slots.loading ? renderSlot(_ctx.$slots, "loading") :
-                        //                 (openBlock(), createBlock(resolveDynamicComponent(_ctx.loadingIcon), null))
-                        //         ],
-                        //         64 /* STABLE_FRAGMENT */))
-                        //     : createCommentVNode("v-if", true),
-                        (!_ctx.loading || _ctx.loadingAlign !== 'left') && _ctx.$slots.leftIcon ? renderSlot(_ctx.$slots, "leftIcon") : createCommentVNode("left-icon", true),
+                        ),                        
+                        (!_ctx.loading || _ctx.loadingAlign !== 'left') && _ctx.$slots.leftIcon ? 
+                        (openBlock(),createBlock('i',{class:'nibu-left-icon',id: 'nibu-left-icon'},[createVNode(_ctx.$slots.leftIcon)])) : 
+                        createCommentVNode("left-icon", true),
                         _ctx.$slots.default ? (openBlock(), createElementBlock(
                             Fragment,
                             {},
@@ -126,7 +115,9 @@ export default defineComponent({
                             , 64 /* STABLE_FRAGMENT */
                         ))
                             : createCommentVNode("v-if", true),
-                        (!_ctx.loading || _ctx.loadingAlign !== 'right') && _ctx.$slots.rightIcon ? renderSlot(_ctx.$slots, "rightIcon") : createCommentVNode("right-icon", true),
+                        (!_ctx.loading || _ctx.loadingAlign !== 'right') && _ctx.$slots.rightIcon ? 
+                        (openBlock(), createBlock('i',{class:'nibu-right-icon',id: 'nibu-right-icon'},[createVNode(_ctx.$slots.rightIcon)])) :
+                         createCommentVNode("left-icon", true),
                     ]
                     )
                 }

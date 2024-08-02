@@ -281,6 +281,18 @@
             </NibuButtonGroup>
         </div>
     </div>
+    <NibuButton>
+        <template #leftIcon>
+            <EnvelopeIcon />
+        </template>
+        Primary
+    </NibuButton>
+    <NibuButton>
+        <template #rightIcon>
+            <EnvelopeIcon />
+        </template>
+        Primary
+    </NibuButton>
 </template>
 <script setup lang="ts">
 import NibuButton from '@/components/button';
